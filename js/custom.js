@@ -1346,7 +1346,7 @@
 							$the_portfolio.find('.et_pb_portfolio_filter a').removeClass('active');
 							$the_portfolio.find('.et_pb_portfolio_filter_all a').addClass('active');
 							$the_portfolio.find('.et_pb_portfolio_item').removeClass('active');
-							$the_portfolio.find('.et_pb_portfolio_item').show();
+							$the_portfolio.find('.et_pb_portfolio_item').fadeIn();
 							$the_portfolio.find('.et_pb_portfolio_item').addClass('active');
 						} else {
 							$the_portfolio.find('.et_pb_portfolio_filter_all').removeClass('active');
@@ -1356,7 +1356,7 @@
 
 							$the_portfolio_items.find('.et_pb_portfolio_item').hide();
 							$the_portfolio_items.find('.et_pb_portfolio_item').removeClass('active');
-							$the_portfolio_items.find('.et_pb_portfolio_item.project_category_' + $(this).data('category-slug') ).show();
+							$the_portfolio_items.find('.et_pb_portfolio_item.project_category_' + $(this).data('category-slug') ).fadeIn();
 							$the_portfolio_items.find('.et_pb_portfolio_item.project_category_' + $(this).data('category-slug') ).addClass('active');
 						}
 
