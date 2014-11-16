@@ -7,6 +7,7 @@
 			prev_arrow				: '.et-pb-arrow-prev',			// left arrow class
 			next_arrow				: '.et-pb-arrow-next',			// right arrow class
 			controls 				: '.et-pb-controllers a',		// control selector
+			carousel_controls 		: '.et_pb_carousel_item',		// carousel control selector
 			control_active_class	: 'et-pb-active-control',		// active control class name
 			previous_text			: 'Previous',					// previous arrow text
 			next_text				: 'Next',						// next arrow text
@@ -15,11 +16,13 @@
 			use_controls			: true,							// use controls?
 			manual_arrows			: '',							// html code for custom arrows
 			append_controls_to		: '',							// controls are appended to the slider element by default, here you can specify the element it should append to
+			controls_below			: false,
 			controls_class			: 'et-pb-controllers',				// controls container class name
 			slideshow				: false,						// automattic animation?
 			slideshow_speed			: 7000,							// automattic animation speed
 			show_progress_bar		: false,							// show progress bar if automattic animation is active
-			tabs_animation			: false
+			tabs_animation			: false,
+			use_carousel			: false
 		}, options );
 
 		var $et_slider 			= $(el),
@@ -31,8 +34,10 @@
 			$et_slider_prev,
 			$et_slider_next,
 			$et_slider_controls,
+			$et_slider_carousel_controls,
 			et_slider_timer,
 			controls_html = '',
+			carousel_html = '',
 			$progress_bar = null,
 			progress_timer_count = 0,
 			$et_pb_container = $et_slider.find( '.et_pb_container' ),
@@ -92,12 +97,46 @@
 				else
 					$( settings.append_controls_to ).append( controls_html );
 
-				$et_slider_controls	= $et_slider.find( settings.controls ),
+				if ( settings.controls_below )
+					$et_slider_controls	= $et_slider.parent().find( settings.controls );
+				else
+					$et_slider_controls	= $et_slider.find( settings.controls );
 
 				$et_slider_controls.click( function(){
 					if ( $et_slider.et_animation_running )	return false;
 
 					$et_slider.et_slider_move_to( $(this).index() );
+
+					return false;
+				} );
+			}
+
+			if ( settings.use_carousel && et_slides_number > 1 ) {
+				for ( var i = 1; i <= et_slides_number; i++ ) {
+					slide_id = i - 1;
+					image_src = ( $et_slide.eq(slide_id).data('image') !== undefined ) ? 'url(' + $et_slide.eq(slide_id).data('image') + ')' : 'none';
+					carousel_html += '<div class="et_pb_carousel_item ' + ( i == 1 ? settings.control_active_class : '' ) + '" data-slide-id="'+ slide_id +'">' +
+						'<div class="et_pb_video_overlay" href="#" style="background-image: ' + image_src + ';">' +
+							'<div class="et_pb_video_overlay_hover"><a href="#" class="et_pb_video_play"></a></div>' +
+						'</div>' +
+					'</div>';
+				}
+
+				carousel_html =
+					'<div class="et_pb_carousel">' +
+					'<div class="et_pb_carousel_items">' +
+						carousel_html +
+					'</div>' +
+					'</div>';
+				$et_slider.after( carousel_html );
+
+				$et_slider_carousel_controls = $et_slider.siblings('.et_pb_carousel').find( settings.carousel_controls );
+				$et_slider_carousel_controls.click( function(){
+					if ( $et_slider.et_animation_running )	return false;
+
+					var $this = $(this);
+					$et_slide.eq( $this.data('slide-id') ).find('.et_pb_video_overlay').css('display', 'none');
+					$et_slider.et_slider_move_to( $this.data('slide-id') );
 
 					return false;
 				} );
@@ -124,6 +163,24 @@
 					et_slider_timer = setTimeout( function() {
 						$et_slider.et_slider_move_to( 'next' );
 					}, settings.slideshow_speed );
+				}
+			}
+
+			function et_stop_video( active_slide ) {
+				var $et_video, et_video_src;
+
+				// if there is a video in the slide, stop it when switching to another slide
+				if ( active_slide.has( 'iframe' ).length ) {
+					$et_video = active_slide.find( 'iframe' );
+					et_video_src = $et_video.attr( 'src' );
+
+					$et_video.attr( 'src', '' );
+					$et_video.attr( 'src', et_video_src );
+
+				} else if ( active_slide.has( 'video' ).length ) {
+					$et_video = active_slide.find( 'video' );
+
+					$et_video[0].pause();
 				}
 			}
 
@@ -204,6 +261,9 @@
 				if ( settings.use_controls )
 					$et_slider_controls.removeClass( settings.control_active_class ).eq( et_active_slide ).addClass( settings.control_active_class );
 
+				if ( settings.use_carousel )
+					$et_slider_carousel_controls.removeClass( settings.control_active_class ).eq( et_active_slide ).addClass( settings.control_active_class );
+
 				if ( ! settings.tabs_animation ) {
 					$next_slide.animate( { opacity : 1 }, et_fade_speed );
 					$active_slide.addClass( 'et_slide_transition' ).css( { 'display' : 'list-item', 'opacity' : 1 } ).animate( { opacity : 0 }, et_fade_speed, function(){
@@ -211,6 +271,8 @@
 							next_slide_layout_bg_color = et_get_bg_layout_color( $next_slide );
 
 						$(this).css('display', 'none').removeClass( 'et_slide_transition' );
+
+						et_stop_video( $active_slide );
 
 						$et_slider
 							.removeClass( active_slide_layout_bg_color )
@@ -312,6 +374,377 @@
 		var yScroll = document.body.scrollTop;
 		window.location.hash = hash;
 		document.body.scrollTop = yScroll;
+	}
+
+	$.et_pb_simple_carousel = function(el, options) {
+		var settings = $.extend( {
+			slide_duration	: 500,
+		}, options );
+
+		var $et_carousel 			= $(el),
+			$carousel_items 		= $et_carousel.find('.et_pb_carousel_items'),
+			$the_carousel_items 	= $carousel_items.find('.et_pb_carousel_item');
+
+		$et_carousel.et_animation_running = false;
+
+		$et_carousel.addClass('container-width-change-notify').on('containerWidthChanged', function( event ){
+			set_carousel_columns( $et_carousel );
+			set_carousel_height( $et_carousel );
+		});
+
+		$carousel_items.data('items', $the_carousel_items.toArray() );
+		$et_carousel.data('columns_setting_up', false );
+
+		$carousel_items.prepend('<div class="et-pb-slider-arrows"><a class="et-pb-slider-arrow et-pb-arrow-prev" href="#">' + '<span>Previous</span>' + '</a><a class="et-pb-slider-arrow et-pb-arrow-next" href="#">' + '<span>Next</span>' + '</a></div>');
+
+		set_carousel_columns( $et_carousel );
+		set_carousel_height( $et_carousel );
+
+		$et_carousel_next 	= $et_carousel.find( '.et-pb-arrow-next' );
+		$et_carousel_prev 	= $et_carousel.find( '.et-pb-arrow-prev'  );
+
+		$et_carousel_next.click( function(){
+			if ( $et_carousel.et_animation_running ) return false;
+
+			$et_carousel.et_carousel_move_to( 'next' );
+
+			return false;
+		} );
+
+		$et_carousel_prev.click( function(){
+			if ( $et_carousel.et_animation_running ) return false;
+
+			$et_carousel.et_carousel_move_to( 'previous' );
+
+			return false;
+		} );
+
+		function set_carousel_height( $the_carousel ) {
+			var carousel_items_width = $the_carousel_items.width(),
+				carousel_items_height = $the_carousel_items.height();
+
+			$carousel_items.css('height', carousel_items_height + 'px' );
+		}
+
+		function set_carousel_columns( $the_carousel ) {
+			var columns,
+				$carousel_parent = $the_carousel.parents('.et_pb_column'),
+				carousel_items_width = $carousel_items.width(),
+				carousel_item_count = $the_carousel_items.length;
+
+			if ( $carousel_parent.hasClass('et_pb_column_4_4') || $carousel_parent.hasClass('et_pb_column_3_4') || $carousel_parent.hasClass('et_pb_column_2_3') ) {
+				if ( $et_window.width() < 768 ) {
+					columns = 3;
+				} else {
+					columns = 4;
+				}
+			} else if ( $carousel_parent.hasClass('et_pb_column_1_2') || $carousel_parent.hasClass('et_pb_column_3_8') || $carousel_parent.hasClass('et_pb_column_1_3') ) {
+				columns = 3;
+			} else if ( $carousel_parent.hasClass('et_pb_column_1_4') ) {
+				if ( $et_window.width() > 480 && $et_window.width() < 980 ) {
+					columns = 3;
+				} else {
+					columns = 2;
+				}
+			}
+
+			if ( columns === $carousel_items.data('columns') ) {
+				return;
+			}
+
+			if ( $the_carousel.data('columns_setting_up') ) {
+				return;
+			}
+
+			$the_carousel.data('columns_setting_up', true );
+
+			// store last setup column
+			$carousel_items.removeClass('columns-' + $carousel_items.data('columns') );
+			$carousel_items.addClass('columns-' + columns );
+			$carousel_items.data('columns', columns );
+
+			// kill all previous groups to get ready to re-group
+			if ( $carousel_items.find('.et-carousel-group').length ) {
+				$the_carousel_items.appendTo( $carousel_items );
+				$carousel_items.find('.et-carousel-group').remove();
+			}
+
+			// setup the grouping
+			var the_carousel_items = $carousel_items.data('items'),
+				$carousel_group = $('<div class="et-carousel-group active">').appendTo( $carousel_items );
+
+			$the_carousel_items.data('position', '');
+			if ( the_carousel_items.length <= columns ) {
+				$carousel_items.find('.et-pb-slider-arrows').hide();
+			} else {
+				$carousel_items.find('.et-pb-slider-arrows').show();
+			}
+
+			for ( position = 1, x=0 ;x < the_carousel_items.length; x++, position++ ) {
+				if ( x < columns ) {
+					$( the_carousel_items[x] ).show();
+					$( the_carousel_items[x] ).appendTo( $carousel_group );
+					$( the_carousel_items[x] ).data('position', position );
+					$( the_carousel_items[x] ).addClass('position_' + position );
+				} else {
+					position = $( the_carousel_items[x] ).data('position');
+					$( the_carousel_items[x] ).removeClass('position_' + position );
+					$( the_carousel_items[x] ).data('position', '' );
+					$( the_carousel_items[x] ).hide();
+				}
+			}
+
+			$the_carousel.data('columns_setting_up', false );
+
+		} /* end set_carousel_columns() */
+
+		$et_carousel.et_carousel_move_to = function ( direction ) {
+			var $active_carousel_group 	= $carousel_items.find('.et-carousel-group.active'),
+				items 					= $carousel_items.data('items'),
+				columns 				= $carousel_items.data('columns');
+
+			$et_carousel.et_animation_running = true;
+
+			var left = 0;
+			$active_carousel_group.children().each(function(){
+				$(this).css({'position':'absolute', 'left': left });
+				left = left + $(this).outerWidth(true);
+			});
+
+			if ( direction == 'next' ) {
+				var $next_carousel_group,
+					current_position = 1,
+					next_position = 1,
+					active_items_start = items.indexOf( $active_carousel_group.children().first()[0] ),
+					active_items_end = active_items_start + columns,
+					next_items_start = active_items_end,
+					next_items_end = next_items_start + columns;
+
+				$next_carousel_group = $('<div class="et-carousel-group next" style="display: none;left: 100%;position: absolute;top: 0;">').insertAfter( $active_carousel_group );
+				$next_carousel_group.css({ 'width': $active_carousel_group.innerWidth() }).show();
+
+				// this is an endless loop, so it can decide internally when to break out, so that next_position
+				// can get filled up, even to the extent of an element having both and current_ and next_ position
+				for( x = 0, total = 0 ; ; x++, total++ ) {
+					if ( total >= active_items_start && total < active_items_end ) {
+						$( items[x] ).addClass( 'changing_position current_position current_position_' + current_position );
+						$( items[x] ).data('current_position', current_position );
+						current_position++;
+					}
+
+					if ( total >= next_items_start && total < next_items_end ) {
+						$( items[x] ).data('next_position', next_position );
+						$( items[x] ).addClass('changing_position next_position next_position_' + next_position );
+
+						if ( !$( items[x] ).hasClass( 'current_position' ) ) {
+							$( items[x] ).addClass('container_append');
+						} else {
+							$( items[x] ).clone(true).appendTo( $active_carousel_group ).hide().addClass('delayed_container_append_dup').attr('id', $( items[x] ).attr('id') + '-dup' );
+							$( items[x] ).addClass('delayed_container_append');
+						}
+
+						next_position++;
+					}
+
+					if ( next_position > columns ) {
+						break;
+					}
+
+					if ( x >= ( items.length -1 )) {
+						x = -1;
+					}
+				}
+
+				var sorted = $carousel_items.find('.container_append, .delayed_container_append_dup').sort(function (a, b) {
+					var el_a_position = parseInt( $(a).data('next_position') );
+					var el_b_position = parseInt( $(b).data('next_position') );
+					return ( el_a_position < el_b_position ) ? -1 : ( el_a_position > el_b_position ) ? 1 : 0;
+				});
+
+				$( sorted ).show().appendTo( $next_carousel_group );
+
+				var left = 0;
+				$next_carousel_group.children().each(function(){
+					$(this).css({'position':'absolute', 'left': left });
+					left = left + $(this).outerWidth(true);
+				});
+
+				$active_carousel_group.animate({
+					left: '-100%'
+				}, {
+					duration: settings.slide_duration,
+					complete: function() {
+						$carousel_items.find('.delayed_container_append').each(function(){
+							left = $( '#' + $(this).attr('id') + '-dup' ).css('left');
+							$(this).css({'position':'absolute', 'left': left });
+							$(this).appendTo( $next_carousel_group );
+						});
+
+						$active_carousel_group.removeClass('active');
+						$active_carousel_group.children().each(function(){
+							position = $(this).data('position');
+							current_position = $(this).data('current_position');
+							$(this).removeClass('position_' + position + ' ' + 'changing_position current_position current_position_' + current_position );
+							$(this).data('position', '');
+							$(this).data('current_position', '');
+							$(this).hide();
+							$(this).css({'position': '', 'left': ''});
+							$(this).appendTo( $carousel_items );
+						});
+
+						$active_carousel_group.remove();
+
+					}
+				} );
+
+				next_left = $active_carousel_group.width() + parseInt( $the_carousel_items.first().css('marginRight').slice(0, -2) );
+				$next_carousel_group.addClass('active').css({'position':'absolute', 'top':0, left: next_left });
+				$next_carousel_group.animate({
+					left: '0%'
+				}, {
+					duration: settings.slide_duration,
+					complete: function(){
+						$next_carousel_group.removeClass('next').addClass('active').css({'position':'', 'width':'', 'top':'', 'left': ''});
+
+						$next_carousel_group.find('.changing_position').each(function( index ){
+							position = $(this).data('position');
+							current_position = $(this).data('current_position');
+							next_position = $(this).data('next_position');
+							$(this).removeClass('container_append delayed_container_append position_' + position + ' ' + 'changing_position current_position current_position_' + current_position + ' next_position next_position_' + next_position );
+							$(this).data('current_position', '');
+							$(this).data('next_position', '');
+							$(this).data('position', ( index + 1 ) );
+						});
+
+						$next_carousel_group.children().css({'position': '', 'left': ''});
+						$next_carousel_group.find('.delayed_container_append_dup').remove();
+
+						$et_carousel.et_animation_running = false;
+					}
+				} );
+
+			} else if ( direction == 'previous' ) {
+				var $prev_carousel_group,
+					current_position = columns,
+					prev_position = columns,
+					columns_span = columns - 1,
+					active_items_start = items.indexOf( $active_carousel_group.children().last()[0] ),
+					active_items_end = active_items_start - columns_span,
+					prev_items_start = active_items_end - 1,
+					prev_items_end = prev_items_start - columns_span;
+
+				$prev_carousel_group = $('<div class="et-carousel-group prev" style="display: none;left: 100%;position: absolute;top: 0;">').insertBefore( $active_carousel_group );
+				$prev_carousel_group.css({ 'left': '-' + $active_carousel_group.innerWidth(), 'width': $active_carousel_group.innerWidth() }).show();
+
+				// this is an endless loop, so it can decide internally when to break out, so that next_position
+				// can get filled up, even to the extent of an element having both and current_ and next_ position
+				for( x = ( items.length - 1 ), total = ( items.length - 1 ) ; ; x--, total-- ) {
+
+					if ( total <= active_items_start && total >= active_items_end ) {
+						$( items[x] ).addClass( 'changing_position current_position current_position_' + current_position );
+						$( items[x] ).data('current_position', current_position );
+						current_position--;
+					}
+
+					if ( total <= prev_items_start && total >= prev_items_end ) {
+						$( items[x] ).data('prev_position', prev_position );
+						$( items[x] ).addClass('changing_position prev_position prev_position_' + prev_position );
+
+						if ( !$( items[x] ).hasClass( 'current_position' ) ) {
+							$( items[x] ).addClass('container_append');
+						} else {
+							$( items[x] ).clone(true).appendTo( $active_carousel_group ).addClass('delayed_container_append_dup').attr('id', $( items[x] ).attr('id') + '-dup' );
+							$( items[x] ).addClass('delayed_container_append');
+						}
+
+						prev_position--;
+					}
+
+					if ( prev_position <= 0 ) {
+						break;
+					}
+
+					if ( x == 0 ) {
+						x = items.length;
+					}
+				}
+
+				var sorted = $carousel_items.find('.container_append, .delayed_container_append_dup').sort(function (a, b) {
+					var el_a_position = parseInt( $(a).data('prev_position') );
+					var el_b_position = parseInt( $(b).data('prev_position') );
+					return ( el_a_position < el_b_position ) ? -1 : ( el_a_position > el_b_position ) ? 1 : 0;
+				});
+
+				$( sorted ).show().appendTo( $prev_carousel_group );
+
+				var left = 0;
+				$prev_carousel_group.children().each(function(){
+					$(this).css({'position':'absolute', 'left': left });
+					left = left + $(this).outerWidth(true);
+				});
+
+				$active_carousel_group.animate({
+					left: '100%'
+				}, {
+					duration: settings.slide_duration,
+					complete: function() {
+						$carousel_items.find('.delayed_container_append').reverse().each(function(){
+							left = $( '#' + $(this).attr('id') + '-dup' ).css('left');
+							$(this).css({'position':'absolute', 'left': left });
+							$(this).prependTo( $prev_carousel_group );
+						});
+
+						$active_carousel_group.removeClass('active');
+						$active_carousel_group.children().each(function(){
+							position = $(this).data('position');
+							current_position = $(this).data('current_position');
+							$(this).removeClass('position_' + position + ' ' + 'changing_position current_position current_position_' + current_position );
+							$(this).data('position', '');
+							$(this).data('current_position', '');
+							$(this).hide();
+							$(this).css({'position': '', 'left': ''});
+							$(this).appendTo( $carousel_items );
+						});
+
+						$active_carousel_group.remove();
+					}
+				} );
+
+				prev_left = (-1) * $active_carousel_group.width() - parseInt( $the_carousel_items.first().css('marginRight').slice(0, -2) );
+				$prev_carousel_group.addClass('active').css({'position':'absolute', 'top':0, left: prev_left });
+				$prev_carousel_group.animate({
+					left: '0%'
+				}, {
+					duration: settings.slide_duration,
+					complete: function(){
+						$prev_carousel_group.removeClass('prev').addClass('active').css({'position':'', 'width':'', 'top':'', 'left': ''});
+
+						$prev_carousel_group.find('.delayed_container_append_dup').remove();
+
+						$prev_carousel_group.find('.changing_position').each(function( index ){
+							position = $(this).data('position');
+							current_position = $(this).data('current_position');
+							prev_position = $(this).data('prev_position');
+							$(this).removeClass('container_append delayed_container_append position_' + position + ' ' + 'changing_position current_position current_position_' + current_position + ' prev_position prev_position_' + prev_position );
+							$(this).data('current_position', '');
+							$(this).data('prev_position', '');
+							position = index + 1;
+							$(this).data('position', position );
+							$(this).addClass('position_' + position );
+						});
+
+						$prev_carousel_group.children().css({'position': '', 'left': ''});
+						$et_carousel.et_animation_running = false;
+					}
+				} );
+			}
+		}
+	}
+
+	$.fn.et_pb_simple_carousel = function( options ) {
+		return this.each(function() {
+			new $.et_pb_simple_carousel(this, options);
+		});
 	}
 
 	var $et_pb_slider  = $( '.et_pb_slider' ),
@@ -467,8 +900,28 @@
 					et_slider_settings.slideshow_speed = et_slider_autospeed[1];
 				}
 
+				if ( $this_slider.parent().hasClass('et_pb_video_slider') ) {
+					et_slider_settings.controls_below = true;
+					et_slider_settings.append_controls_to = $this_slider.parent();
+				}
+
+				if ( $this_slider.hasClass('et_pb_slider_carousel') )
+					et_slider_settings.use_carousel = true;
+
 				$this_slider.et_pb_simple_slider( et_slider_settings );
 
+			} );
+		}
+
+		$et_pb_carousel  = $( '.et_pb_carousel' );
+		if ( $et_pb_carousel.length ){
+			$et_pb_carousel.each( function() {
+				var $this_carousel = $(this),
+					et_carousel_settings = {
+						fade_speed 		: 1000
+					};
+
+				$this_carousel.et_pb_simple_carousel( et_carousel_settings );
 			} );
 		}
 
@@ -1320,6 +1773,7 @@
 			var seconds_left = ( end_date - current_date ) / 1000;
 
 			days = parseInt(seconds_left / 86400);
+			days = days > 0 ? days : 0;
 			seconds_left = seconds_left % 86400;
 
 			hours = parseInt(seconds_left / 3600);
@@ -1531,7 +1985,8 @@
 						$(this.el).find('.percent p').css({ 'visibility' : 'visible' });
 					},
 					onStep: function(from, to, percent) {
-						$(this.el).find('.percent-value').text( Math.round( percent ) );
+						if ( percent != to )
+							$(this.el).find('.percent-value').text( Math.round( percent ) );
 					},
 					onStop: function(from, to) {
 						$(this.el).find('.percent-value').text( $(this.el).data('number-value') );
@@ -1660,8 +2115,21 @@
 		if ( $.fn.fitVids ) {
 			$( '.et_pb_slide_video' ).fitVids();
 
-			$( '#main-content' ).fitVids();
+			$( '#main-content' ).fitVids( { customSelector: "iframe[src^='http://www.hulu.com'], iframe[src^='http://www.dailymotion.com'], iframe[src^='http://www.funnyordie.com'], iframe[src^='https://embed-ssl.ted.com'], iframe[src^='http://embed.revision3.com'], iframe[src^='https://flickr.com'], iframe[src^='http://blip.tv'], iframe[src^='http://www.collegehumor.com']"} );
 		}
+
+		$( '.et_pb_video .et_pb_video_overlay, .et_pb_video_wrap .et_pb_video_overlay' ).click( function() {
+			var $this        = $(this),
+				$video_image = $this.closest( '.et_pb_video_overlay' );
+
+			$video_image.fadeTo( 500, 0, function() {
+				var $image = $(this);
+
+				$image.css( 'display', 'none' );
+			} );
+
+			return false;
+		} );
 
 		et_fix_video_wmode('.fluid-width-video-wrapper');
 
@@ -1734,7 +2202,7 @@
 				admin_bar_height     = $( '#wpadminbar' ).length ? $( '#wpadminbar' ).innerHeight() : 0;
 
 			et_header_height      = $( '#main-header' ).innerHeight() + secondary_nav_height - 1,
-			et_header_modifier    = et_header_height <= 90 ? et_header_height - 80 : et_header_height - 56,
+			et_header_modifier    = et_header_height <= 90 ? et_header_height - 29 : et_header_height - 56,
 			et_header_offset      = et_header_modifier + admin_bar_height;
 
 			et_primary_header_top = secondary_nav_height + admin_bar_height;
@@ -2225,16 +2693,6 @@
 				$('html, body').animate({scrollTop : 0},800);
 			});
 		}
-
-		// $(document).ready(function(){
-		//     var height = $(window).height();
-		// $(".full_screen").css("height", height);
-		// });
-
-		// $(window).resize(function() {
-		//     var height = $(this).height();
-		// $(".full_screen").css("height", height);
-		// });
 
 	} );
 })(jQuery)
