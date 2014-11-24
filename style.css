@@ -45,8 +45,74 @@ body.home { background-color: #222; }
 	.et_pb_filterable_portfolio .et_portfolio_image h3 { margin-top: 38%; padding: 0 10%; }
 		.et_pb_filterable_portfolio .et_portfolio_image:hover h3 { margin-top: 40%; }
 
-.et_overlay { background: rgba(0, 0, 0, 0.5); border: none; }
-	.et_pb_filterable_portfolio .et_portfolio_image .et_overlay:before { content: '\e050'; }
+.et_overlay { background: rgba(0, 0, 0, 0.3); border: none; }
+	.et_pb_filterable_portfolio .et_portfolio_image .et_overlay:before { content: '\004c';
+}
 		.et_pb_filterable_portfolio .et_portfolio_image:hover .et_overlay:before { top: 45%; }
 
 .et_pb_filterable_portfolio .et_pb_portfolio_item.active, .et_pb_gallery_grid .et_pb_gallery_item { -webkit-animation: none; -moz-animation: none; -o-animation: none; animation: none; }
+
+
+
+/*--------------------------------------*/
+/*---------------ShiftNav---------------*/
+/*--------------------------------------*/
+
+.shiftnav-wrap { padding-top: 0 !important; }
+.shiftnav-toggle-main-block { display: none !important; }
+#shiftnav-toggle-main { color: rgba( 255, 215, 0, 0.5 ) !important; width: 70px !important; height: 70px; background: rgba( 0, 0, 0, 0.2 ) !important; padding: 0 !important; right: 0 !important; left: auto !important; }
+	#shiftnav-toggle-main:before { padding: 24px !important; font-size: 24px; }
+
+#shiftnav-toggle-main.shiftnav-toggle-position-absolute { position: absolute; }
+
+#et-top-navigation { display: none; }
+
+.shiftnav, #shiftnav-toggle-main, .shiftnav-wrap {
+	-webkit-transition: -webkit-transform 0.75s !important;
+	-moz-transition: -moz-transform 0.75s !important;
+	-ms-transition: -ms-transform 0.75s !important;
+	-o-transition: -o-transform 0.75s !important;
+	transition: transform 0.75s !important;
+}
+
+
+
+/*--------------------------------------*/
+/*---------------ICON FONT--------------*/
+/*--------------------------------------*/
+
+@font-face {
+	font-family: 'ksd';
+	src:url('fonts/ksd.eot?8zk6co');
+	src:url('fonts/ksd.eot?#iefix8zk6co') format('embedded-opentype'),
+		url('fonts/ksd.woff?8zk6co') format('woff'),
+		url('fonts/ksd.ttf?8zk6co') format('truetype'),
+		url('fonts/ksd.svg?8zk6co#ksd') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'ksd';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-uniE600:before {
+	content: "\e600";
+}
+.icon-icon_mail:before {
+	content: "\e601";
+}
+.icon-social_dribbble:before {
+	content: "\e602";
+}
+.icon-social_linkedin:before {
+	content: "\e603";
+}
