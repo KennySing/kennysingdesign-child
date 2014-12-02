@@ -17,6 +17,7 @@ body.home { background-color: #222; }
 #main-header .container { width: 100% }
 #logo { height: 50px; margin-bottom: 0; }
 #top-menu li > a { padding-bottom: 0; }
+#page-container { overflow: hidden; }
 
 /*--------------------------------------*/
 /*------------FEATURED SLIDER-----------*/
