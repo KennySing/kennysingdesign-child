@@ -124,7 +124,11 @@
 					: $template_directory_uri . '/images/logo.png';
 			?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" />
+					<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46.2px" height="50px" viewBox="0 0 46.2 50" enable-background="new 0 0 46.2 50" xml:space="preserve">
+						<polygon class="k1" fill="rgba(255,255,255,0.4)" points="21.2,25 10.6,35.6 25,50 46.2,50 "/>
+						<polygon class="k2" fill="rgba(0,0,0,0.3)" points="21.2,25 10.6,35.6 10.6,35.6 13.4,38.4 13.4,38.4 24,27.8 "/>
+						<polygon class="k3" fill="rgba(255,255,255,1)" points="46.2,0 25,0 0,25 10.6,35.6 "/>
+					</svg>
 				</a>
 
 				<div id="et-top-navigation">
