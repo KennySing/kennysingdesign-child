@@ -30,21 +30,25 @@ body.home { background-color: #222; }
 .landing-slider, .landing-slider .et_pb_slide { height: 80vh; }
 .landing-slider.project-header, .landing-slider.project-header .et_pb_slide { height: 100vh; }
 .landing-slider .et_pb_container { width: 100%; }
-.landing-slider .et_pb_slide_description, .project-header .project-description { position: absolute; display:block; right: 0; bottom: 0; padding: 70px; text-align: right; text-transform: uppercase; font-size: 60px; letter-spacing: 4px; width: 60%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
-.landing-slider .et_pb_slide_description h2 { padding-bottom: 0; }
-
-.landing-slider .et_pb_slide_content { opacity: 0.3; font-size: 14px; display: inline-block; padding: 0; }
-	.project-header.landing-slider .et_pb_slide_content { opacity: 0.5; }
-.landing-slider .et_pb_slide_content span { color: rgba( 255, 215, 0, 1 ); font-weight: 800; }
-	.project-header.landing-slider .et_pb_slide_content span { color: rgba( 0, 0, 0, 1 ); }
-.landing-slider .et_pb_slide_content:after { font-size: 22px; width: 22px; }
+.landing-slider .et_pb_slide_description, .project-header .project-description  { position: absolute; display:block; right: 0; bottom: 0; padding: 70px; text-align: right; max-width: 60%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+.landing-slider .et_pb_slide_description h2, .landing-slider .et_pb_slide_content span.cats { text-transform: uppercase; letter-spacing: 4px; }
+.landing-slider .et_pb_slide_content { font-size: 14px; display: inline-block; padding: 0; }
+	.landing-slider .et_pb_slide_content span.cats { color: rgba( 255, 255, 255, 0.3 ); }
+		.landing-slider .et_pb_slide_content span.cats span { color: rgba( 255, 215, 0, 0.5 ); font-weight: 800; }
+	.project-header .et_pb_slide_content span.cats, .project-header .et_pb_slide_content span.cats span { color: rgba( 0, 0, 0, 0.3 ); }
+			.landing-slider .et_pb_slide_content:after { font-size: 22px; width: 22px; }
+.landing-slider .et_pb_slide_content span.desc { font-style: italic; color: rgba( 0, 0, 0, 0.5 ); display: block; max-width: 420px; padding: 12px 0 16px; margin-left: auto; }
 
 .landing-slider a.et_pb_more_button, .landing-slider a.et_pb_more_button:hover { border: none; padding: 0 !important; width: 22px; height: 22px; background: transparent !important; top: 5px; }
-.landing-slider a.et_pb_more_button:after { opacity: 1; font-size: 22px; margin-left: 0; top: 0; right: 0; line-height: 22px; position: absolute; color: rgba( 255, 215, 0, 0.4 ); width: 22px; }
-	.landing-slider a.et_pb_more_button:hover:after { color: rgba( 255, 215, 0, 0.6 ); }
-.project-header.landing-slider a.et_pb_more_button:after { color: rgba( 0, 0, 0, 0.5 ); }
-	.project-header.landing-slider a.et_pb_more_button:hover:after { color: rgba( 0, 0, 0, 0.8 ); }
-.landing-slider.project-header a.et_pb_more_button { -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+.project-header a.et_pb_more_button { display: block; float: right; }
+	.landing-slider a.et_pb_more_button:after { opacity: 1; font-size: 22px; margin-left: 0; top: 0; right: 0; line-height: 22px; position: absolute; color: rgba( 255, 215, 0, 0.4 ); width: 22px; }
+		.landing-slider a.et_pb_more_button:hover:after { color: rgba( 255, 215, 0, 0.6 ); }
+	.project-header.landing-slider a.et_pb_more_button:after { color: rgba( 0, 0, 0, 0.5 ); }
+		.project-header.landing-slider a.et_pb_more_button:hover:after { color: rgba( 0, 0, 0, 0.8 ); }
+	.landing-slider.project-header a.et_pb_more_button { display: block; float: none; margin-left: auto; padding-top: 20px; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+
+.et_pb_slide_description { -webkit-animation-delay: .2s; -moz-animation-delay: .2s; -o-animation-delay: .2s; -ms-animation-delay: .2s; animation-delay: .2s; }
+
 
 /*--------------------------------------*/
 /*----------FILTERED PORTFOLIO----------*/
@@ -56,8 +60,9 @@ body.home { background-color: #222; }
 
 .et_pb_filterable_portfolio .et_pb_portfolio_filters { margin: 0; background-color: #222; text-align: center; line-height: 0; }
 	.et_pb_filterable_portfolio .et_pb_portfolio_filters ul { display: inline-block; margin: auto; float: none; }
-		.et_pb_filterable_portfolio .et_pb_portfolio_filters li a { padding: 20px; border: none; color: rgba( 255, 255, 255, .4 ) !important; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
-			.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a:hover { background-color: transparent !important; color: rgba( 255, 255, 255, .8 ) !important; }
+		.et_pb_filterable_portfolio .et_pb_portfolio_filters li { line-height: 21px; }
+			.et_pb_filterable_portfolio .et_pb_portfolio_filters li a { padding: 20px; border: none; color: rgba( 255, 255, 255, .4 ) !important; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
+				.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a:hover { background-color: transparent !important; color: rgba( 255, 255, 255, .8 ) !important; }
 
 .et_pb_filterable_portfolio_grid .et_pb_portfolio_item { width: 25% !important; margin: 0 !important; padding: 0 !important; position: relative !important; float: left; left: auto !important; top: auto !important; }
 
@@ -145,7 +150,7 @@ body.home { background-color: #222; }
 
 .shiftnav-wrap { padding-top: 0 !important; }
 .shiftnav-toggle-main-block { display: none !important; }
-#shiftnav-toggle-main { width: 70px !important; height: 70px; background: rgba( 0, 0, 0, 0.2 ) !important; padding: 0 !important; right: 0 !important; left: auto !important; }
+#shiftnav-toggle-main { width: 60px !important; height: 60px; background: rgba( 0, 0, 0, 0.2 ) !important; padding: 0 !important; right: 0 !important; left: auto !important; }
 	.single-project #shiftnav-toggle-main { background: rgba( 0, 0, 0, 0.1 ) !important; }
 	#shiftnav-toggle-main:before { padding: 24px !important; font-size: 24px; }
 
@@ -162,11 +167,11 @@ body.home { background-color: #222; }
 }
 
 #portfolio-icon {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	position: absolute;
 	right: 0;
-	top: 53px;
+	top: 43px;
 	background: rgba( 255, 255, 255, 0.03 );
 }
 .single-project #portfolio-icon { background: rgba( 0, 0, 0, 0.03 ); }
@@ -192,15 +197,19 @@ body.home { background-color: #222; }
 }
 
 a.shiftnav-target {
-color: rgba(255, 255, 255, 0.4);
-padding: 30px 30px 0 !important;
-line-height: 1em !important;
+	color: rgba(255, 255, 255, 0.4);
+	padding: 30px 30px 0 !important;
+	line-height: 1em !important;
 }
 
-#portfolio-icon, #shiftnav-toggle-main, #portfolio-icon:before, #shiftnav-toggle-main:before, .landing-slider .et_pb_slide_content:after { float: none !important; font-size: 22px !important; text-align: center !important; padding: 0 !important; line-height: 70px; -moz-transition: all 0.75s !important; -webkit-transition: all 0.75s !important; transition: all 0.75s !important; }
-	#portfolio-icon:hover, #shiftnav-toggle-main:hover { width: 90px !important; }
+a.shiftnav-target:hover {
+	color: rgba(255, 255, 255, 0.7);
+}
 
-#portfolio-icon:before { line-height: 70px; display: block; color: rgba( 255, 255, 255, 0.2 ); }
+#portfolio-icon, #shiftnav-toggle-main, #portfolio-icon:before, #shiftnav-toggle-main:before, .landing-slider .et_pb_slide_content:after { float: none !important; font-size: 22px !important; text-align: center !important; padding: 0 !important; line-height: 60px; -moz-transition: all 0.75s !important; -webkit-transition: all 0.75s !important; transition: all 0.75s !important; }
+	#portfolio-icon:hover, #shiftnav-toggle-main:hover { width: 70px !important; }
+
+#portfolio-icon:before { line-height: 60px; display: block; color: rgba( 255, 255, 255, 0.2 ); }
 	#portfolio-icon:hover:before { color: rgba( 255, 255, 255, 0.4 ); }
 .single-project #portfolio-icon:before { color: rgba( 0, 0, 0, 0.4 ); }
 	.single-project #portfolio-icon:hover:before { color: rgba( 0, 0, 0, 0.6 ); }
