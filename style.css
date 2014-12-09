@@ -25,6 +25,8 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 .single-project #logo .k2 { fill: rgba(0,0,0,0.5); }
 .single-project #logo .k3 { fill: rgba(0,0,0,0.6); }*/
 
+
+
 /*--------------------------------------*/
 /*------------FEATURED HEADER-----------*/
 /*--------------------------------------*/
@@ -32,11 +34,13 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 .landing-slider, .landing-slider .et_pb_slide { height: 80vh; }
 .project-header.full_screen { height: 100vh; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 .landing-slider .et_pb_container, .project-header .et_pb_row { width: 100%; }
-.project-header .et_pb_slide_description, .project-header .et_pb_row { width: 600px; max-width: 100%; padding: 70px; margin: auto; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
-.project-header .et_pb_text { margin-bottom: 0; }
+.project-header .et_pb_slide_description, .project-header .et_pb_row { width: 600px; max-width: 100%; padding: 0 70px 70px ; margin: auto; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+	.project-header .et_pb_slide_description { margin-top: 32vh !important; -webkit-animation-delay: .2s; -moz-animation-delay: .2s; -o-animation-delay: .2s; -ms-animation-delay: .2s; animation-delay: .2s; }
+	.project-header .et_pb_text { margin-bottom: 0; }
 
 .project-header h2, .project-header span.cats { text-transform: uppercase; letter-spacing: 4px; }
 	.project-header h2 { font-weight: 300; font-size: 46px; padding-bottom: 4px; }
+
 .project-header .et_pb_slide_content { font-size: 14px; display: inline-block; padding: 0; }
 	.project-header span.cats { color: rgba( 255, 255, 255, 0.4 ); }
 		.project-header span.cats span { color: rgba( 255, 215, 0, 0.6 ); font-weight: 800; }
@@ -49,7 +53,6 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 		.dark-header.project-header a:hover:after { color: rgba( 0, 0, 0, 0.8 ); }
 	.project-header .et_pb_text a { display: block; margin: auto; padding-top: 20px; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
 
-.et_pb_slide_description { margin-top: 30vh !important; -webkit-animation-delay: .2s; -moz-animation-delay: .2s; -o-animation-delay: .2s; -ms-animation-delay: .2s; animation-delay: .2s; }
 
 
 /*--------------------------------------*/
@@ -91,25 +94,14 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 
 @font-face {
 	font-family: 'ksd';
-	src:url('fonts/ksd.eot?o4d9fh');
-	src:url('fonts/ksd.eot?#iefixo4d9fh') format('embedded-opentype'),
-		url('fonts/ksd.woff?o4d9fh') format('woff'),
-		url('fonts/ksd.ttf?o4d9fh') format('truetype'),
-		url('fonts/ksd.svg?o4d9fh#ksd') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src:url('fonts/ksd.eot?o4d9fh'); src:url('fonts/ksd.eot?#iefixo4d9fh') format('embedded-opentype'), url('fonts/ksd.woff?o4d9fh') format('woff'), url('fonts/ksd.ttf?o4d9fh') format('truetype'), url('fonts/ksd.svg?o4d9fh#ksd') format('svg');
+	font-weight: normal; font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"], #portfolio-icon, #shiftnav-toggle-main:before, .landing-slider .et_pb_slide_content:after, .project-header a:after, .et_pb_scroll_top {
 	font-family: 'ksd' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-arrow-right:before, .project-header a.et_pb_more_button:after, .project-header .et_pb_text a:after {
@@ -136,7 +128,6 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 .icon-close:before, .shiftnav-open #shiftnav-toggle-main.shiftnav-toggle-icon-x:before {
 	content: "\e606" !important;
 }
-
 .icon-top:before, .et_pb_scroll_top:before {
 	content: "\e608";
 }
@@ -173,6 +164,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 	top: 43px;
 	background: rgba( 255, 255, 255, 0.03 );
 }
+
 /*.dark-header #portfolio-icon { background: rgba( 0, 0, 0, 0.03 ); }*/
 
 .shiftnav { width: 200px !important; }
@@ -195,15 +187,8 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 	transform: translateX(-200px) !important;
 }
 
-a.shiftnav-target {
-	color: rgba(255, 255, 255, 0.4);
-	padding: 30px 30px 0 !important;
-	line-height: 1em !important;
-}
-
-a.shiftnav-target:hover {
-	color: rgba(255, 255, 255, 0.7);
-}
+a.shiftnav-target {	color: rgba(255, 255, 255, 0.4); padding: 30px 30px 0 !important; line-height: 1em !important; }
+	a.shiftnav-target:hover { color: rgba(255, 255, 255, 0.7); }
 
 #portfolio-icon, #shiftnav-toggle-main, #portfolio-icon:before, #shiftnav-toggle-main:before, .landing-slider .et_pb_slide_content:after { float: none !important; font-size: 22px !important; text-align: center !important; padding: 0 !important; line-height: 60px; -moz-transition: all 0.75s !important; -webkit-transition: all 0.75s !important; transition: all 0.75s !important; }
 	#portfolio-icon:hover, #shiftnav-toggle-main:hover { width: 70px !important; }
@@ -219,6 +204,7 @@ a.shiftnav-target:hover {
 	.single-project #shiftnav-toggle-main:hover:before { color: rgba( 255, 255, 255, 1 ); }*/
 
 
+
 /*--------------------------------------*/
 /*--------------BACK TO TOP-------------*/
 /*--------------------------------------*/
@@ -231,6 +217,7 @@ a.shiftnav-target:hover {
 /*--------------------------------------*/
 /*----------------MONARCH---------------*/
 /*--------------------------------------*/
+
 .et_monarch .et_social_networks.et_social_autowidth li:nth-child(n) { margin: 0 10px 0 0 !important; background-color: transparent !important; display: inline-block; } 
 .et_monarch .et_social_icon { color: rgba( 0, 0, 0, 0.2); }
 	.et_monarch .et_social_autowidth li:hover .et_social_icon { color: rgba( 0, 0, 0, 0.5); }
@@ -238,6 +225,7 @@ a.shiftnav-target:hover {
 		.et_monarch .social_light .et_social_autowidth li:hover .et_social_icon { color: rgba( 255, 255, 255, 1); }
 .et_monarch .et_social_networks { width: 100%; margin: auto; text-align: center; }
 ul.et_social_icons_container { width: auto !important; }
+
 
 
 /*--------------------------------------------------*/
@@ -261,10 +249,9 @@ ul.et_social_icons_container { width: auto !important; }
 }
 
 @media only screen and (max-width: 767px) {
+	.project-header h2 { font-size: 36px !important; }
 }
 
 @media only screen and (max-width: 479px){	
-	.project-header h2 { font-size: 36px !important; }
 	.et_pb_slide_content, a.et_pb_more_button { display: block !important; }
-
 }
