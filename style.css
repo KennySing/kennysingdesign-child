@@ -228,7 +228,16 @@ a.shiftnav-target:hover {
 
 
 
-
+/*--------------------------------------*/
+/*----------------MONARCH---------------*/
+/*--------------------------------------*/
+.et_monarch .et_social_networks.et_social_autowidth li:nth-child(n) { margin: 0 10px 0 0 !important; background-color: transparent !important; display: inline-block; } 
+.et_monarch .et_social_icon { color: rgba( 0, 0, 0, 0.2); }
+	.et_monarch .et_social_autowidth li:hover .et_social_icon { color: rgba( 0, 0, 0, 0.5); }
+.et_monarch .social_light .et_social_icon { color: rgba( 255, 255, 255, 0.3); }
+		.et_monarch .social_light .et_social_autowidth li:hover .et_social_icon { color: rgba( 255, 255, 255, 1); }
+.et_monarch .et_social_networks { width: 100%; margin: auto; text-align: center; }
+ul.et_social_icons_container { width: auto !important; }
 
 
 /*--------------------------------------------------*/
