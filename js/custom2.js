@@ -15,7 +15,7 @@ $(window).on('orientationchange', function() {
 function center_row() {
 	var height = $(window).height();
 	var section_height = $(this).height();
-	var row_height = $(this).children('.et_pb_row').height();
+	var row_height = $(this).children('.et_pb_row').height() + 70;
 	var row = $(this).children('.et_pb_row');
 	var difference = (section_height - row_height) / 2;
 	$(this).css("height", height);
@@ -25,7 +25,7 @@ function center_row() {
 
 function center_row_load() {
     var height = $(window).height();
-	var row_height = $(this).children('.et_pb_row').height();
+	var row_height = $(this).children('.et_pb_row').height() + 70;
 	var row = $(this).children('.et_pb_row');
 	var difference = (height - row_height) / 2;
 	$(this).css("height", height);
