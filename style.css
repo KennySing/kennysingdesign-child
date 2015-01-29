@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 /*.single-project #logo .k1 { fill: rgba(0,0,0,0.8); }
 .single-project #logo .k2 { fill: rgba(0,0,0,0.5); }
 .single-project #logo .k3 { fill: rgba(0,0,0,0.6); }*/
+.et_pb_bg_layout_dark, .et_pb_bg_layout_dark h1, .et_pb_bg_layout_dark h2, .et_pb_bg_layout_dark h3, .et_pb_bg_layout_dark h4, .et_pb_bg_layout_dark h5, .et_pb_bg_layout_dark h6 { color: #d7d7d7 !important; }
 
 
 
@@ -71,7 +72,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 
 #fw-portfolio { width: 100%; }
 
-.et_pb_filterable_portfolio .et_pb_portfolio_filters { margin: 0; background-color: #222; text-align: center; line-height: 0; }
+.et_pb_filterable_portfolio .et_pb_portfolio_filters { margin: 0; background-color: #28292D;; text-align: center; line-height: 0; }
 	.et_pb_filterable_portfolio .et_pb_portfolio_filters ul { display: inline-block; margin: auto; float: none; }
 		.et_pb_filterable_portfolio .et_pb_portfolio_filters li { line-height: 21px; }
 			.et_pb_filterable_portfolio .et_pb_portfolio_filters li a { padding: 20px; border: none; color: rgba( 255, 255, 255, .4 ) !important; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
@@ -85,7 +86,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 	.et_pb_filterable_portfolio .et_portfolio_image h3 { margin-top: 38%; padding: 0 10%; }
 		.et_pb_filterable_portfolio .et_portfolio_image:hover h3 { margin-top: 40%; }
 
-.et_overlay { background: rgba(0, 0, 0, 0.3); border: none; }
+.et_overlay { background: rgba(28, 30, 34, 0.4); border: none; }
 	.et_pb_filterable_portfolio .et_portfolio_image .et_overlay:before { content: '\004c';
 }
 		.et_pb_filterable_portfolio .et_portfolio_image:hover .et_overlay:before { top: 45%; }
@@ -244,7 +245,43 @@ ul.et_social_icons_container { width: auto !important; }
 	#homepage-hero span#skills { letter-spacing: 1px; font-size: 15px; font-family: "Georgia", serif; color: #b5a78c; font-style: italic; }
 	#homepage-hero #social { margin-top: 40px; }
 	#homepage-hero #social .icon { font-size: 24px; color: rgba( 255, 255, 255, .07 ); margin: 7px; }
-	span.down-arrow { display: block; margin: 50px auto 0; width: 15px; height: 15px;  -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); border-bottom: 2px solid #966145; border-right: 2px solid #966145;}
+	a.down-arrow { 
+		margin: auto;
+		width: 33px;
+		height: 20px;
+		text-align: center;
+		margin-top: 50px;
+		position: relative;
+		display: block;
+	}
+
+	.down-arrow-left, .down-arrow-right { 
+		width: 20px; 
+		height: 2px; 
+		background: #966145;
+		margin: auto;
+		position: absolute;
+		-moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s;
+	}
+	.down-arrow-left {
+		-ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg);
+		left: 0px;  
+		top: 10px;
+	}
+
+	.down-arrow-right {
+		-ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg);
+		right: 0px;
+		top: 10px;
+	}
+
+	a.down-arrow:hover .down-arrow-left {
+		-ms-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg);
+	}
+
+	a.down-arrow:hover .down-arrow-right {
+		-ms-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg);
+	}
 
 /*--------------------------------------------------*/
 /*-----------------[RESPONSIVE]---------------------*/
