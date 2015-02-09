@@ -1,3 +1,5 @@
+@import url("../Divi/style.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 /*
 Theme Name:     Divi Child for Kenny Sing Design
 Theme URI:      http://www.kennysing.com/
@@ -7,303 +9,773 @@ Author URI:     http://www.kennysing.com/
 Template:       Divi
 Version:        1.0
 */
-
-
-
-@import url("../Divi/style.css");
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
-
-body {
-	background-color: #222;
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+/* line 1, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/mixins.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/mixins\.less}line{font-family:\000031}}
+.image-rendering-crisp {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
 }
-h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
-#main-header { background-color: transparent !important; padding-top: 15px; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;}
-#main-header .container { width: 100% }
-#logo { height: 45px !important; max-height: 45px !important; margin-bottom: 0; }
-#top-menu li > a { padding-bottom: 0; }
-#page-container { overflow: hidden; }
-#et-main-area { margin-top: -67px; }
-.et_pb_slide_description { padding: 0; }
+/* line 17, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000317}}
+body {
+  background-color: #222;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+/* line 21, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000321}}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+}
+/* line 22, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000322}}
+#main-header {
+  background-color: transparent !important;
+  padding-top: 15px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+/* line 23, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000323}}
+#main-header .container {
+  width: 100%;
+}
+/* line 24, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000324}}
+#logo {
+  height: 45px !important;
+  max-height: 45px !important;
+  margin-bottom: 0;
+}
+/* line 25, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000325}}
+#top-menu li > a {
+  padding-bottom: 0;
+}
+/* line 26, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000326}}
+#page-container {
+  overflow: hidden;
+}
+/* line 27, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000327}}
+#et-main-area {
+  margin-top: -67px;
+}
+/* line 28, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000328}}
+.et_pb_slide_description {
+  padding: 0;
+}
 /*.single-project #logo .k1 { fill: rgba(0,0,0,0.8); }
 .single-project #logo .k2 { fill: rgba(0,0,0,0.5); }
 .single-project #logo .k3 { fill: rgba(0,0,0,0.6); }*/
-.et_pb_bg_layout_dark, .et_pb_bg_layout_dark h1, .et_pb_bg_layout_dark h2, .et_pb_bg_layout_dark h3, .et_pb_bg_layout_dark h4, .et_pb_bg_layout_dark h5, .et_pb_bg_layout_dark h6 { color: #d7d7d7 !important; }
-
-
-
+/* line 32, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000332}}
+.et_pb_bg_layout_dark,
+.et_pb_bg_layout_dark h1,
+.et_pb_bg_layout_dark h2,
+.et_pb_bg_layout_dark h3,
+.et_pb_bg_layout_dark h4,
+.et_pb_bg_layout_dark h5,
+.et_pb_bg_layout_dark h6 {
+  color: #d7d7d7 !important;
+}
 /*--------------------------------------*/
 /*------------FEATURED HEADER-----------*/
 /*--------------------------------------*/
-
-.project-header .et_pb_row { width: 70%; max-width: 600px; margin: auto; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
-
-.project-header h2, .project-header span.cats { text-transform: uppercase; letter-spacing: 4px; }
-	.project-header h2 { font-weight: 300; font-size: 46px; padding-bottom: 4px; }
-
-.project-header .et_pb_slide_content { font-size: 14px; display: inline-block; padding: 0; }
-	.project-header span.cats { color: rgba( 255, 255, 255, 0.4 ); }
-		.project-header span.cats span { color: rgba( 255, 215, 0, 0.6 ); font-weight: 800; }
-	.project-header span.desc { font-style: italic; color: rgba( 255, 255, 255, 0.6 ); display: block; padding: 12px 0 16px; margin: auto; font-size: 16px; letter-spacing: 1px; line-height: 1.6em; }
-
+/* line 40, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000340}}
+.project-header .et_pb_row {
+  width: 70%;
+  max-width: 600px;
+  margin: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+/* line 42, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000342}}
+.project-header h2,
+.project-header span.cats {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+/* line 43, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000343}}
+.project-header h2 {
+  font-weight: 300;
+  font-size: 46px;
+  padding-bottom: 4px;
+}
+/* line 45, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000345}}
+.project-header .et_pb_slide_content {
+  font-size: 14px;
+  display: inline-block;
+  padding: 0;
+}
+/* line 46, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000346}}
+.project-header span.cats {
+  color: rgba(255, 255, 255, 0.4);
+}
+/* line 47, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000347}}
+.project-header span.cats span {
+  color: rgba(255, 215, 0, 0.6);
+  font-weight: 800;
+}
+/* line 48, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000348}}
+.project-header span.desc {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  padding: 12px 0 16px;
+  margin: auto;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.6em;
+}
 /*--------------------------------------*/
 /*----------FILTERED PORTFOLIO----------*/
 /*--------------------------------------*/
-
-.fw-section, .fw-section .et_pb_row { width: 100%; padding: 0; margin: 0; }
-
-#fw-portfolio { width: 100%; }
-
-.et_pb_filterable_portfolio .et_pb_portfolio_filters { margin: 0 !important; background-color: #292B32; text-align: center; line-height: 0; }
-	.et_pb_filterable_portfolio .et_pb_portfolio_filters ul { display: inline-block; margin: auto; float: none; padding: 40px 0 30px; line-height: 0; }
-		.et_pb_filterable_portfolio .et_pb_portfolio_filters li { line-height: 21px; width: auto !important; display: inline-block; float: none; }
-			.et_pb_filterable_portfolio .et_pb_portfolio_filters li a { padding: 0 20px 10px; border: none; color: rgba( 255, 255, 255, .4 ) !important; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
-				.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a:hover { background-color: transparent !important; color: rgba( 255, 255, 255, .8 ) !important; }
-
-.et_pb_filterable_portfolio_grid .et_pb_portfolio_item { width: 20% !important; margin: 0 !important; padding: 0 !important; position: relative !important; float: left; left: auto !important; top: auto !important; }
-
-.et_portfolio_image img { width: 100%; }
-
-.et_pb_filterable_portfolio .et_portfolio_image h3, .et_pb_filterable_portfolio .et_portfolio_image p { display: block; position: relative; float: left; z-index: 5; width: 100%; text-align: center; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -o-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translate3d(0,0,0); }
-	.et_pb_filterable_portfolio .et_portfolio_image h3 { margin-top: 38%; padding: 0 10%; }
-		.et_pb_filterable_portfolio .et_portfolio_image:hover h3 { margin-top: 40%; }
-
-.et_overlay { background: rgba(15, 18, 20, 0.85); border: none; }
-	.et_pb_filterable_portfolio .et_portfolio_image .et_overlay:before { content: '\004c';
+/* line 54, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000354}}
+.fw-section,
+.fw-section .et_pb_row {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-		.et_pb_filterable_portfolio .et_portfolio_image:hover .et_overlay:before { top: 45%; }
-
-.et_pb_filterable_portfolio .et_pb_portfolio_item.active, .et_pb_gallery_grid .et_pb_gallery_item { -webkit-animation: none; -moz-animation: none; -o-animation: none; animation: none; }
-
-.et_pb_filterable_portfolio .et_pb_portfolio_items_wrapper { border-bottom: none; }
-
-
-
+/* line 56, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000356}}
+#fw-portfolio {
+  width: 100%;
+}
+/* line 59, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000359}}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters {
+  margin: 0 !important;
+  background-color: #292B32;
+  text-align: center;
+  line-height: 0;
+}
+/* line 65, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000365}}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters ul {
+  display: inline-block;
+  margin: auto;
+  float: none;
+  padding: 40px 0 30px;
+  line-height: 0;
+}
+/* line 74, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000374}}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters ul {
+  display: inline-block;
+  margin: auto;
+  float: none;
+  padding: 40px 0 30px;
+  line-height: 0;
+}
+/* line 75, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000375}}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li {
+  line-height: 21px;
+  width: auto !important;
+  display: inline-block;
+  float: none;
+}
+/* line 76, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000376}}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a {
+  padding: 0 20px 10px;
+  border: none;
+  color: rgba(255, 255, 255, 0.4) !important;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 77, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000377}}
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a:hover {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+/* line 79, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000379}}
+.et_pb_filterable_portfolio_grid .et_pb_portfolio_item {
+  width: 20% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  float: left;
+  left: auto !important;
+  top: auto !important;
+}
+/* line 81, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000381}}
+.et_portfolio_image img {
+  width: 100%;
+}
+/* line 83, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000383}}
+.et_pb_filterable_portfolio .et_portfolio_image h3,
+.et_pb_filterable_portfolio .et_portfolio_image p {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+/* line 84, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000384}}
+.et_pb_filterable_portfolio .et_portfolio_image h3 {
+  margin-top: 38%;
+  padding: 0 10%;
+}
+/* line 85, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000385}}
+.et_pb_filterable_portfolio .et_portfolio_image:hover h3 {
+  margin-top: 40%;
+}
+/* line 87, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000387}}
+.et_overlay {
+  background: rgba(15, 18, 20, 0.85);
+  border: none;
+}
+/* line 88, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000388}}
+.et_pb_filterable_portfolio .et_portfolio_image .et_overlay:before {
+  content: '\004c';
+}
+/* line 90, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000390}}
+.et_pb_filterable_portfolio .et_portfolio_image:hover .et_overlay:before {
+  top: 45%;
+}
+/* line 92, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000392}}
+.et_pb_filterable_portfolio .et_pb_portfolio_item.active,
+.et_pb_gallery_grid .et_pb_gallery_item {
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  animation: none;
+}
+/* line 94, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\0000394}}
+.et_pb_filterable_portfolio .et_pb_portfolio_items_wrapper {
+  border-bottom: none;
+}
 /*--------------------------------------*/
 /*---------------ICON FONT--------------*/
 /*--------------------------------------*/
-
 @font-face {
-	font-family: 'ksd';
-	src:url('fonts/ksd.eot?o4d9fh'); src:url('fonts/ksd.eot?#iefixo4d9fh') format('embedded-opentype'), url('fonts/ksd.woff?o4d9fh') format('woff'), url('fonts/ksd.ttf?o4d9fh') format('truetype'), url('fonts/ksd.svg?o4d9fh#ksd') format('svg');
-	font-weight: normal; font-style: normal;
+  font-family: 'ksd';
+  src: url('fonts/ksd.eot?o4d9fh');
+  src: url('fonts/ksd.eot?#iefixo4d9fh') format('embedded-opentype'), url('fonts/ksd.woff?o4d9fh') format('woff'), url('fonts/ksd.ttf?o4d9fh') format('truetype'), url('fonts/ksd.svg?o4d9fh#ksd') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-
-[class^="icon-"], [class*=" icon-"], .icon, #portfolio-icon, #shiftnav-toggle-main:before, .landing-slider .et_pb_slide_content:after, .project-header a:after, .et_pb_scroll_top {
-	font-family: 'ksd' !important;
-	speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1;
-	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+/* line 108, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003108}}
+[class^="icon-"],
+[class*=" icon-"],
+.icon,
+#portfolio-icon,
+#shiftnav-toggle-main:before,
+.landing-slider .et_pb_slide_content:after,
+.project-header a:after,
+.et_pb_scroll_top {
+  font-family: 'ksd' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 /*.icon-arrow-right:before, .project-header a.et_pb_more_button:after, .project-header .et_pb_text a:after {
 	content: "\e607";
 }*/
-.icon-menu:before, #shiftnav-toggle-main:before {
-	content: "\e604" !important;
+/* line 117, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003117}}
+.icon-menu:before,
+#shiftnav-toggle-main:before {
+  content: "\e604" !important;
 }
-.icon-portfolio:before, #portfolio-icon:before {
-	content: "\e605";
+/* line 120, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003120}}
+.icon-portfolio:before,
+#portfolio-icon:before {
+  content: "\e605";
 }
+/* line 123, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003123}}
 .icon-uniE600:before {
-	content: "\e600";
+  content: "\e600";
 }
+/* line 126, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003126}}
 .icon-mail:before {
-	content: "\e601";
+  content: "\e601";
 }
+/* line 129, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003129}}
 .icon-dribbble:before {
-	content: "\e602";
+  content: "\e602";
 }
+/* line 132, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003132}}
 .icon-linkedin:before {
-	content: "\e603";
+  content: "\e603";
 }
-.icon-close:before, .shiftnav-open #shiftnav-toggle-main.shiftnav-toggle-icon-x:before {
-	content: "\e606" !important;
+/* line 135, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003135}}
+.icon-close:before,
+.shiftnav-open #shiftnav-toggle-main.shiftnav-toggle-icon-x:before {
+  content: "\e606" !important;
 }
-.icon-top:before, .et_pb_scroll_top:before {
-	content: "\e608";
+/* line 138, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003138}}
+.icon-top:before,
+.et_pb_scroll_top:before {
+  content: "\e608";
 }
-
-
-
 /*--------------------------------------*/
 /*---------------ShiftNav---------------*/
 /*--------------------------------------*/
-
-.shiftnav-wrap { padding-top: 0 !important; }
-.shiftnav-toggle-main-block { display: none !important; }
-#shiftnav-toggle-main { width: 60px !important; height: 60px; background: rgba( 255, 255, 255, 0.02 ) !important; padding: 0 !important; right: 0 !important; left: auto !important; }
-	.single-project #shiftnav-toggle-main { background: rgba( 0, 0, 0, 0.1 ) !important; }
-	#shiftnav-toggle-main:before { padding: 24px !important; font-size: 24px; }
-
-#shiftnav-toggle-main.shiftnav-toggle-position-absolute { position: absolute; }
-
-#et-top-navigation { display: none; }
-
-.shiftnav, #shiftnav-toggle-main, .shiftnav-wrap {
-	-webkit-transition: -webkit-transform 0.75s !important;
-	-moz-transition: -moz-transform 0.75s !important;
-	-ms-transition: -ms-transform 0.75s !important;
-	-o-transition: -o-transform 0.75s !important;
-	transition: transform 0.75s !important;
+/* line 148, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003148}}
+.shiftnav-wrap {
+  padding-top: 0 !important;
 }
-
+/* line 149, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003149}}
+.shiftnav-toggle-main-block {
+  display: none !important;
+}
+/* line 150, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003150}}
+#shiftnav-toggle-main {
+  width: 60px !important;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.02) !important;
+  padding: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+}
+/* line 151, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003151}}
+.single-project #shiftnav-toggle-main {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+/* line 152, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003152}}
+#shiftnav-toggle-main:before {
+  padding: 24px !important;
+  font-size: 24px;
+}
+/* line 154, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003154}}
+#shiftnav-toggle-main.shiftnav-toggle-position-absolute {
+  position: absolute;
+}
+/* line 156, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003156}}
+#et-top-navigation {
+  display: none;
+}
+/* line 158, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003158}}
+.shiftnav,
+#shiftnav-toggle-main,
+.shiftnav-wrap {
+  -webkit-transition: -webkit-transform 0.75s !important;
+  -moz-transition: -moz-transform 0.75s !important;
+  -ms-transition: -ms-transform 0.75s !important;
+  -o-transition: -o-transform 0.75s !important;
+  transition: transform 0.75s !important;
+}
+/* line 166, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003166}}
 #portfolio-icon {
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	right: 0;
-	top: 46px;
-	background: rgba( 0, 0, 0, 0.04 );
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: 46px;
+  background: rgba(0, 0, 0, 0.04);
 }
-
 /*.dark-header #portfolio-icon { background: rgba( 0, 0, 0, 0.03 ); }*/
-
-.shiftnav { width: 200px !important; }
-
-.shiftnav-inner { background-color: #212225 !important; }
-
+/* line 177, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003177}}
+.shiftnav {
+  width: 200px !important;
+}
+/* line 179, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003179}}
+.shiftnav-inner {
+  background-color: #212225 !important;
+}
+/* line 181, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003181}}
 .shiftnav:after {
-	-webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
-	-moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
-	-ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
-	-o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+  -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+  -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
 }
-
-.shiftnav-open.shiftnav-open-right #shiftnav-toggle-main, .shiftnav-open.shiftnav-open-right .shiftnav-wrap {
-	-webkit-transform: translateX(-200px) !important;
-	-moz-transform: translateX(-200px) !important;
-	-ms-transform: translateX(-200px) !important;
-	-o-transform: translateX(-200px) !important;
-	transform: translateX(-200px) !important;
+/* line 189, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003189}}
+.shiftnav-open.shiftnav-open-right #shiftnav-toggle-main,
+.shiftnav-open.shiftnav-open-right .shiftnav-wrap {
+  -webkit-transform: translateX(-200px) !important;
+  -moz-transform: translateX(-200px) !important;
+  -ms-transform: translateX(-200px) !important;
+  -o-transform: translateX(-200px) !important;
+  transform: translateX(-200px) !important;
 }
-
-a.shiftnav-target {	color: rgba(255, 255, 255, 0.4); padding: 30px 30px 0 !important; line-height: 1em !important; }
-	a.shiftnav-target:hover { color: rgba(255, 255, 255, 0.7); }
-
-#portfolio-icon, #shiftnav-toggle-main, #portfolio-icon:before, #shiftnav-toggle-main:before, .landing-slider .et_pb_slide_content:after { float: none !important; font-size: 22px !important; text-align: center !important; padding: 0 !important; line-height: 60px; -moz-transition: all 0.75s !important; -webkit-transition: all 0.75s !important; transition: all 0.75s !important; }
-	#portfolio-icon:hover, #shiftnav-toggle-main:hover { width: 70px !important; }
-
-#portfolio-icon:before { line-height: 60px; display: block; color: rgba( 180, 165, 140, 0.3 ); }
-	#portfolio-icon:hover:before { color: rgba( 180, 165, 140, 0.8 ); }
+/* line 197, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003197}}
+a.shiftnav-target {
+  color: rgba(255, 255, 255, 0.4);
+  padding: 30px 30px 0 !important;
+  line-height: 1em !important;
+}
+/* line 198, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003198}}
+a.shiftnav-target:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+/* line 200, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003200}}
+#portfolio-icon,
+#shiftnav-toggle-main,
+#portfolio-icon:before,
+#shiftnav-toggle-main:before,
+.landing-slider .et_pb_slide_content:after {
+  float: none !important;
+  font-size: 22px !important;
+  text-align: center !important;
+  padding: 0 !important;
+  line-height: 60px;
+  -moz-transition: all 0.75s !important;
+  -webkit-transition: all 0.75s !important;
+  transition: all 0.75s !important;
+}
+/* line 201, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003201}}
+#portfolio-icon:hover,
+#shiftnav-toggle-main:hover {
+  width: 70px !important;
+}
+/* line 203, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003203}}
+#portfolio-icon:before {
+  line-height: 60px;
+  display: block;
+  color: rgba(180, 165, 140, 0.3);
+}
+/* line 204, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003204}}
+#portfolio-icon:hover:before {
+  color: rgba(180, 165, 140, 0.8);
+}
 /*.single-project #portfolio-icon:before { color: rgba( 0, 0, 0, 0.4 ); }
 	.single-project #portfolio-icon:hover:before { color: rgba( 0, 0, 0, 0.6 ); }*/
-
-#shiftnav-toggle-main:before { color: rgba( 255, 255, 255, 0.15 ); }
-	#shiftnav-toggle-main:hover:before { color: rgba( 255, 255, 255, 0.4 ); }
+/* line 208, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003208}}
+#shiftnav-toggle-main:before {
+  color: rgba(255, 255, 255, 0.15);
+}
+/* line 209, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003209}}
+#shiftnav-toggle-main:hover:before {
+  color: rgba(255, 255, 255, 0.4);
+}
 /*.single-project #shiftnav-toggle-main:before { color: rgba( 255, 255, 255, 1 ); }
 	.single-project #shiftnav-toggle-main:hover:before { color: rgba( 255, 255, 255, 1 ); }*/
-
-
-
 /*--------------------------------------*/
 /*--------------BACK TO TOP-------------*/
 /*--------------------------------------*/
-
-.et_pb_scroll_top { padding: 10px; background: rgba(0,0,0,0.2); font-size: 24px; color: rgba( 255, 255, 255, 0.5 ); -webkit-border-radius: 0 !important; -moz-border-radius: 0 !important; border-radius: 0 !important; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; }
-	.et_pb_scroll_top:hover { color: rgba( 255, 255, 255, 1 );}
-
-
-
+/* line 219, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003219}}
+.et_pb_scroll_top {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 220, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003220}}
+.et_pb_scroll_top:hover {
+  color: #ffffff;
+}
 /*--------------------------------------*/
 /*----------------MONARCH---------------*/
 /*--------------------------------------*/
-
-.et_monarch .et_social_networks.et_social_autowidth li:nth-child(n) { margin: 0 10px 0 0 !important; background-color: transparent !important; display: inline-block; } 
-.et_monarch .et_social_icon { color: rgba( 0, 0, 0, 0.2); }
-	.et_monarch .et_social_autowidth li:hover .et_social_icon { color: rgba( 0, 0, 0, 0.5); }
-.et_monarch .social_light .et_social_icon { color: rgba( 255, 255, 255, 0.3); }
-		.et_monarch .social_light .et_social_autowidth li:hover .et_social_icon { color: rgba( 255, 255, 255, 1); }
-.et_monarch .et_social_networks { width: 100%; margin: auto; text-align: center; }
-ul.et_social_icons_container { width: auto !important; }
-
-
-
-
-
-
-#homepage-hero, .project-header { padding: 4px 0; text-align: center; }
-	#homepage-hero .et_pb_row { width: 85%; }
-	#homepage-hero h1 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 13px; font-size: 74px; color: #d7d7d7; margin-left: 12px; }
-	#homepage-hero span#skills { letter-spacing: 1px; font-size: 16px; font-family: "Georgia", serif; font-weight: normal; color: #b5a78c; font-style: italic; }
-	#homepage-hero #social { margin-top: 48px; }
-	#homepage-hero #social .icon { font-size: 28px; color: rgba( 255, 255, 255, .07 ); margin: 7px; }
-	a.down-arrow { 
-		margin: auto;
-		width: 33px;
-		height: 20px;
-		text-align: center;
-		margin-top: 50px;
-		position: relative;
-		display: block;
-	}
-
-	.down-arrow-left, .down-arrow-right { 
-		width: 20px; 
-		height: 2px; 
-		background: #966145;
-		margin: auto;
-		position: absolute;
-		-moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s;
-	}
-	.down-arrow-left {
-		-ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg);
-		left: 0px;  
-		top: 10px;
-	}
-
-	.down-arrow-right {
-		-ms-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transform: rotate(-45deg);
-		right: 0px;
-		top: 10px;
-	}
-
-	a.down-arrow:hover .down-arrow-left {
-		-ms-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg);
-	}
-
-	a.down-arrow:hover .down-arrow-right {
-		-ms-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg);
-	}
-
+/* line 228, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003228}}
+.et_monarch .et_social_networks.et_social_autowidth li:nth-child(n) {
+  margin: 0 10px 0 0 !important;
+  background-color: transparent !important;
+  display: inline-block;
+}
+/* line 229, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003229}}
+.et_monarch .et_social_icon {
+  color: rgba(0, 0, 0, 0.2);
+}
+/* line 230, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003230}}
+.et_monarch .et_social_autowidth li:hover .et_social_icon {
+  color: rgba(0, 0, 0, 0.5);
+}
+/* line 231, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003231}}
+.et_monarch .social_light .et_social_icon {
+  color: rgba(255, 255, 255, 0.3);
+}
+/* line 232, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003232}}
+.et_monarch .social_light .et_social_autowidth li:hover .et_social_icon {
+  color: #ffffff;
+}
+/* line 233, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003233}}
+.et_monarch .et_social_networks {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+/* line 234, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003234}}
+ul.et_social_icons_container {
+  width: auto !important;
+}
+/* line 241, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003241}}
+#homepage-hero,
+.project-header {
+  padding: 4px 0;
+  text-align: center;
+}
+/* line 242, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003242}}
+#homepage-hero .et_pb_row {
+  width: 85%;
+}
+/* line 243, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003243}}
+#homepage-hero h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 13px;
+  font-size: 74px;
+  color: #d7d7d7;
+  margin-left: 12px;
+}
+/* line 244, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003244}}
+#homepage-hero span#skills {
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  color: #b5a78c;
+  font-style: italic;
+}
+/* line 245, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003245}}
+#homepage-hero #social {
+  margin-top: 48px;
+}
+/* line 246, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003246}}
+#homepage-hero #social .icon {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.07);
+  margin: 7px;
+}
+/* line 247, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003247}}
+a.down-arrow {
+  margin: auto;
+  width: 33px;
+  height: 20px;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  display: block;
+}
+/* line 257, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003257}}
+.down-arrow-left,
+.down-arrow-right {
+  width: 20px;
+  height: 2px;
+  background: #966145;
+  margin: auto;
+  position: absolute;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 265, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003265}}
+.down-arrow-left {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 0px;
+  top: 10px;
+}
+/* line 271, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003271}}
+.down-arrow-right {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 0px;
+  top: 10px;
+}
+/* line 277, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003277}}
+a.down-arrow:hover .down-arrow-left {
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+/* line 281, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003281}}
+a.down-arrow:hover .down-arrow-right {
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
 /*--------------------------------------------------*/
 /*-----------------[RESPONSIVE]---------------------*/
 /*--------------------------------------------------*/
-
-@media only screen and (max-width: 2000px){
-	.et_pb_filterable_portfolio_grid .et_pb_portfolio_item { width: 25% !important; }
+@media only screen and (max-width: 2000px) {
+  /* line 290, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003290}}
+  .et_pb_filterable_portfolio_grid .et_pb_portfolio_item {
+    width: 25% !important;
+  }
 }
-
-@media only screen and (min-width: 981px){
-}
-
 @media only screen and (max-width: 1080px) {
-	.et_pb_filterable_portfolio_grid .et_pb_portfolio_item { width: 33.333% !important; }
+  /* line 297, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003297}}
+  .et_pb_filterable_portfolio_grid .et_pb_portfolio_item {
+    width: 33.333% !important;
+  }
 }
-
 @media only screen and (max-width: 980px) {
-	#main-header { padding-bottom: 0; }
-	.project-header h2 { font-weight: 300 !important; }
+  /* line 301, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003301}}
+  #main-header {
+    padding-bottom: 0;
+  }
+  /* line 302, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003302}}
+  .project-header h2 {
+    font-weight: 300 !important;
+  }
 }
-
 @media only screen and (max-width: 767px) {
-	.project-header h2 { font-size: 36px !important; }
+  /* line 306, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003306}}
+  .project-header h2 {
+    font-size: 36px !important;
+  }
 }
-
-@media only screen and (max-width: 560px){
-	#homepage-hero h1 { letter-spacing: 10px; font-size: 48px; margin-left: 10px; padding-bottom: 2px; }
-	#homepage-hero span#skills { letter-spacing: 0; font-size: 13px; }
-	#homepage-hero #social { margin-top: 24px; }
-	#homepage-hero #social .icon { font-size: 20px; }
-	a.down-arrow { margin-top: 34px; }
-	.et_pb_filterable_portfolio_grid .et_pb_portfolio_item { width: 50% !important; }
+@media only screen and (max-width: 560px) {
+  /* line 310, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003310}}
+  #homepage-hero h1 {
+    letter-spacing: 10px;
+    font-size: 48px;
+    margin-left: 10px;
+    padding-bottom: 2px;
+  }
+  /* line 311, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003311}}
+  #homepage-hero span#skills {
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+  /* line 312, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003312}}
+  #homepage-hero #social {
+    margin-top: 24px;
+  }
+  /* line 313, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003313}}
+  #homepage-hero #social .icon {
+    font-size: 20px;
+  }
+  /* line 314, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003314}}
+  a.down-arrow {
+    margin-top: 34px;
+  }
+  /* line 315, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003315}}
+  .et_pb_filterable_portfolio_grid .et_pb_portfolio_item {
+    width: 50% !important;
+  }
 }
-
-@media only screen and (max-width: 479px){	
-	.et_pb_slide_content, a.et_pb_more_button { display: block !important; }
-	.et_pb_filterable_portfolio_grid .et_pb_portfolio_item { width: 100% !important; }
+@media only screen and (max-width: 479px) {
+  /* line 319, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003319}}
+  .et_pb_slide_content,
+  a.et_pb_more_button {
+    display: block !important;
+  }
+  /* line 320, /Applications/MAMP/htdocs/kennysing/wp-content/themes/divi-child/styles/less/style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/kennysing\/wp-content\/themes\/divi-child\/styles\/less\/style\.less}line{font-family:\00003320}}
+  .et_pb_filterable_portfolio_grid .et_pb_portfolio_item {
+    width: 100% !important;
+  }
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlcy9sZXNzL3N0eWxlLmxlc3MiLCJzdHlsZXMvbGVzcy9taXhpbnMubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiWUFhWTs7Ozs7Ozs7Ozs7OztBQ2JaO0VBQ0MsaUNBQUE7RUFDQSwrQkFBQTtFQUNBLDBDQUFBO0VBQ0Esa0NBQUE7RUFDQSx3Q0FBQTs7OztBRFdEO0VBQ0Msc0JBQUE7RUNoQkEsaUNBQUE7RUFDQSwrQkFBQTtFQUNBLDBDQUFBO0VBQ0Esa0NBQUE7RUFDQSx3Q0FBQTs7OztBRGVEO0FBQUk7QUFBSTtBQUFJO0FBQUk7QUFBSTtFQUFLLGtCQUFBOzs7O0FBQ3pCO0VBQWUsd0NBQUE7RUFBMEMsaUJBQUE7RUFBbUIsZ0JBQUE7RUFBa0IscUJBQUE7RUFBdUIsd0JBQUE7Ozs7QUFDckgsWUFBYTtFQUFhLFdBQUE7Ozs7QUFDMUI7RUFBUSx1QkFBQTtFQUF5QiwyQkFBQTtFQUE2QixnQkFBQTs7OztBQUM5RCxTQUFVLEdBQUc7RUFBTSxpQkFBQTs7OztBQUNuQjtFQUFrQixnQkFBQTs7OztBQUNsQjtFQUFnQixpQkFBQTs7OztBQUNoQjtFQUEyQixVQUFBOzs7Ozs7O0FBSTNCO0FBQXVCLHFCQUFzQjtBQUFJLHFCQUFzQjtBQUFJLHFCQUFzQjtBQUFJLHFCQUFzQjtBQUFJLHFCQUFzQjtBQUFJLHFCQUFzQjtFQUFLLHlCQUFBOzs7Ozs7O0FBUXBMLGVBQWdCO0VBQWEsVUFBQTtFQUFZLGdCQUFBO0VBQWtCLFlBQUE7RUFBYyxzQkFBQTtFQUF3QiwyQkFBQTtFQUE2Qiw4QkFBQTs7OztBQUU5SCxlQUFnQjtBQUFJLGVBQWdCLEtBQUk7RUFBUSx5QkFBQTtFQUEyQixtQkFBQTs7OztBQUMxRSxlQUFnQjtFQUFLLGdCQUFBO0VBQWtCLGVBQUE7RUFBaUIsbUJBQUE7Ozs7QUFFekQsZUFBZ0I7RUFBdUIsZUFBQTtFQUFpQixxQkFBQTtFQUF1QixVQUFBOzs7O0FBQzlFLGVBQWdCLEtBQUk7RUFBUSwrQkFBQTs7OztBQUMzQixlQUFnQixLQUFJLEtBQU07RUFBTyw2QkFBQTtFQUFpQyxnQkFBQTs7OztBQUNuRSxlQUFnQixLQUFJO0VBQVEsa0JBQUE7RUFBb0IsK0JBQUE7RUFBbUMsY0FBQTtFQUFnQixvQkFBQTtFQUFzQixZQUFBO0VBQWMsZUFBQTtFQUFpQixtQkFBQTtFQUFxQixrQkFBQTs7Ozs7OztBQU05SztBQUFhLFdBQVk7RUFBYSxXQUFBO0VBQWEsVUFBQTtFQUFZLFNBQUE7Ozs7QUFFL0Q7RUFBZ0IsV0FBQTs7OztBQUVoQiwyQkFDQztFQUNDLG9CQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7Ozs7QUFMRiwyQkFDQyx5QkFNQztFQUNDLHFCQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxvQkFBQTtFQUNBLGNBQUE7Ozs7QUFJRiwyQkFBNEIseUJBQXlCO0VBQUsscUJBQUE7RUFBdUIsWUFBQTtFQUFjLFdBQUE7RUFBYSxvQkFBQTtFQUFzQixjQUFBOzs7O0FBQ2pJLDJCQUE0Qix5QkFBeUI7RUFBSyxpQkFBQTtFQUFtQixzQkFBQTtFQUF3QixxQkFBQTtFQUF1QixXQUFBOzs7O0FBQzNILDJCQUE0Qix5QkFBeUIsR0FBRztFQUFJLG9CQUFBO0VBQXNCLFlBQUE7RUFBYywrQkFBQTtFQUE2Qyx5QkFBQTtFQUEyQiw0QkFBQTtFQUE4QixvQkFBQTs7OztBQUNyTSwyQkFBNEIseUJBQXlCLEdBQUcsRUFBQztBQUFTLDJCQUE0Qix5QkFBeUIsR0FBRyxFQUFDO0VBQVMsd0NBQUE7RUFBMEMsK0JBQUE7Ozs7QUFFbEwsZ0NBQWlDO0VBQXdCLHFCQUFBO0VBQXVCLG9CQUFBO0VBQXNCLHFCQUFBO0VBQXVCLDZCQUFBO0VBQStCLFdBQUE7RUFBYSxxQkFBQTtFQUF1QixvQkFBQTs7OztBQUVoTSxtQkFBb0I7RUFBTSxXQUFBOzs7O0FBRTFCLDJCQUE0QixvQkFBb0I7QUFBSSwyQkFBNEIsb0JBQW9CO0VBQUksY0FBQTtFQUFnQixrQkFBQTtFQUFvQixXQUFBO0VBQWEsVUFBQTtFQUFZLFdBQUE7RUFBYSxrQkFBQTtFQUFvQix5QkFBQTtFQUEyQiw0QkFBQTtFQUE4QixvQkFBQTtFQUFzQixzQkFBQTtFQUF3QiwyQkFBQTtFQUE2Qiw4QkFBQTtFQUFnQyxtQ0FBQTtFQUFxQyxnQ0FBQTtFQUFrQyw4QkFBQTtFQUFnQywyQkFBQTtFQUE2QixtQkFBbUIsb0JBQW5COzs7O0FBQzdlLDJCQUE0QixvQkFBb0I7RUFBSyxlQUFBO0VBQWlCLGNBQUE7Ozs7QUFDckUsMkJBQTRCLG9CQUFtQixNQUFPO0VBQUssZUFBQTs7OztBQUU3RDtFQUFjLGtDQUFBO0VBQW9DLFlBQUE7Ozs7QUFDakQsMkJBQTRCLG9CQUFvQixZQUFXO0VBQVUsU0FBUyxPQUFUOzs7O0FBRXBFLDJCQUE0QixvQkFBbUIsTUFBTyxZQUFXO0VBQVUsUUFBQTs7OztBQUU3RSwyQkFBNEIsc0JBQXFCO0FBQVMsbUJBQW9CO0VBQXNCLHVCQUFBO0VBQXlCLG9CQUFBO0VBQXNCLGtCQUFBO0VBQW9CLGVBQUE7Ozs7QUFFdkssMkJBQTRCO0VBQWlDLG1CQUFBOzs7OztBQVE3RDtFQUNDLGFBQWEsS0FBYjtFQUNBLFNBQVEsdUJBQVI7RUFBaUMsU0FBUSw4QkFBOEIsT0FBTywwQkFBMEIseUJBQXlCLE9BQU8sYUFBYSx3QkFBd0IsT0FBTyxpQkFBaUIsNEJBQTRCLE9BQU8sTUFBdk07RUFDakMsbUJBQUE7RUFBcUIsa0JBQUE7Ozs7QUFHdEI7QUFBa0I7QUFBbUI7QUFBTztBQUFpQixxQkFBcUI7QUFBUyxlQUFnQixxQkFBb0I7QUFBUSxlQUFnQixFQUFDO0FBQVE7RUFDL0osYUFBYSxLQUFiO0VBQ0EsV0FBQTtFQUFhLGtCQUFBO0VBQW9CLG1CQUFBO0VBQXFCLG9CQUFBO0VBQXNCLG9CQUFBO0VBQXNCLGNBQUE7RUFDbEcsbUNBQUE7RUFBcUMsa0NBQUE7Ozs7Ozs7QUFNdEMsVUFBVTtBQUFTLHFCQUFxQjtFQUN2QyxTQUFTLE9BQVQ7Ozs7QUFFRCxlQUFlO0FBQVMsZUFBZTtFQUN0QyxTQUFTLE9BQVQ7Ozs7QUFFRCxhQUFhO0VBQ1osU0FBUyxPQUFUOzs7O0FBRUQsVUFBVTtFQUNULFNBQVMsT0FBVDs7OztBQUVELGNBQWM7RUFDYixTQUFTLE9BQVQ7Ozs7QUFFRCxjQUFjO0VBQ2IsU0FBUyxPQUFUOzs7O0FBRUQsV0FBVztBQUFTLGNBQWUsc0JBQXFCLHVCQUF1QjtFQUM5RSxTQUFTLE9BQVQ7Ozs7QUFFRCxTQUFTO0FBQVMsaUJBQWlCO0VBQ2xDLFNBQVMsT0FBVDs7Ozs7OztBQVNEO0VBQWlCLHlCQUFBOzs7O0FBQ2pCO0VBQThCLHdCQUFBOzs7O0FBQzlCO0VBQXdCLHNCQUFBO0VBQXdCLFlBQUE7RUFBYyxxQ0FBQTtFQUFvRCxxQkFBQTtFQUF1QixtQkFBQTtFQUFxQixxQkFBQTs7OztBQUM3SixlQUFnQjtFQUF3Qiw4QkFBQTs7OztBQUN4QyxxQkFBcUI7RUFBVSx3QkFBQTtFQUEwQixlQUFBOzs7O0FBRTFELHFCQUFxQjtFQUFxQyxrQkFBQTs7OztBQUUxRDtFQUFxQixhQUFBOzs7O0FBRXJCO0FBQVc7QUFBdUI7RUFDakMsMkNBQUE7RUFDQSxxQ0FBQTtFQUNBLG1DQUFBO0VBQ0EsaUNBQUE7RUFDQSxzQ0FBQTs7OztBQUdEO0VBQ0MsV0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsK0JBQUE7Ozs7O0FBS0Q7RUFBWSx1QkFBQTs7OztBQUVaO0VBQWtCLG9DQUFBOzs7O0FBRWxCLFNBQVM7RUFDUiwrQ0FBQTtFQUNBLDRDQUFBO0VBQ0EsMkNBQUE7RUFDQSwwQ0FBQTtFQUNBLHVDQUFBOzs7O0FBR0QsY0FBYyxvQkFBcUI7QUFBdUIsY0FBYyxvQkFBcUI7RUFDNUYsbUJBQW1CLGtCQUFuQjtFQUNBLGdCQUFnQixrQkFBaEI7RUFDQSxlQUFlLGtCQUFmO0VBQ0EsY0FBYyxrQkFBZDtFQUNBLFdBQVcsa0JBQVg7Ozs7QUFHRCxDQUFDO0VBQW1CLCtCQUFBO0VBQWlDLCtCQUFBO0VBQWlDLDJCQUFBOzs7O0FBQ3JGLENBQUMsZ0JBQWdCO0VBQVMsK0JBQUE7Ozs7QUFFM0I7QUFBaUI7QUFBdUIsZUFBZTtBQUFTLHFCQUFxQjtBQUFTLGVBQWdCLHFCQUFvQjtFQUFTLHNCQUFBO0VBQXdCLDBCQUFBO0VBQTRCLDZCQUFBO0VBQStCLHFCQUFBO0VBQXVCLGlCQUFBO0VBQW1CLHFDQUFBO0VBQXVDLHdDQUFBO0VBQTBDLGdDQUFBOzs7O0FBQ3hWLGVBQWU7QUFBUSxxQkFBcUI7RUFBUyxzQkFBQTs7OztBQUV0RCxlQUFlO0VBQVUsaUJBQUE7RUFBbUIsY0FBQTtFQUFnQiwrQkFBQTs7OztBQUMzRCxlQUFlLE1BQU07RUFBVSwrQkFBQTs7Ozs7O0FBSWhDLHFCQUFxQjtFQUFVLGdDQUFBOzs7O0FBQzlCLHFCQUFxQixNQUFNO0VBQVUsK0JBQUE7Ozs7Ozs7OztBQVV0QztFQUFvQixhQUFBO0VBQWUsOEJBQUE7RUFBNkIsZUFBQTtFQUFpQiwrQkFBQTtFQUFtQyxtQ0FBQTtFQUFxQyxnQ0FBQTtFQUFrQywyQkFBQTtFQUE2Qix5QkFBQTtFQUEyQiw0QkFBQTtFQUE4QixvQkFBQTs7OztBQUNoUixpQkFBaUI7RUFBUyxjQUFBOzs7Ozs7O0FBUTNCLFdBQVksb0JBQW1CLG9CQUFxQixHQUFFLFVBQVU7RUFBTSw2QkFBQTtFQUErQix3Q0FBQTtFQUEwQyxxQkFBQTs7OztBQUMvSSxXQUFZO0VBQWtCLHlCQUFBOzs7O0FBQzdCLFdBQVkscUJBQXFCLEdBQUUsTUFBTztFQUFrQix5QkFBQTs7OztBQUM3RCxXQUFZLGNBQWM7RUFBa0IsK0JBQUE7Ozs7QUFDMUMsV0FBWSxjQUFjLHFCQUFxQixHQUFFLE1BQU87RUFBa0IsY0FBQTs7OztBQUM1RSxXQUFZO0VBQXNCLFdBQUE7RUFBYSxZQUFBO0VBQWMsa0JBQUE7Ozs7QUFDN0QsRUFBRTtFQUE2QixzQkFBQTs7OztBQU8vQjtBQUFnQjtFQUFrQixjQUFBO0VBQWdCLGtCQUFBOzs7O0FBQ2pELGNBQWU7RUFBYSxVQUFBOzs7O0FBQzVCLGNBQWU7RUFBSyxhQUFhLGlDQUFiO0VBQWdELGdCQUFBO0VBQWtCLHlCQUFBO0VBQTJCLG9CQUFBO0VBQXNCLGVBQUE7RUFBaUIsY0FBQTtFQUFnQixpQkFBQTs7OztBQUN4SyxjQUFlLEtBQUk7RUFBVSxtQkFBQTtFQUFxQixlQUFBO0VBQWlCLGFBQWEsZ0JBQWI7RUFBK0IsbUJBQUE7RUFBcUIsY0FBQTtFQUFnQixrQkFBQTs7OztBQUN2SSxjQUFlO0VBQVUsZ0JBQUE7Ozs7QUFDekIsY0FBZSxRQUFRO0VBQVEsZUFBQTtFQUFpQixnQ0FBQTtFQUFtQyxXQUFBOzs7O0FBQ25GLENBQUM7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBOzs7O0FBR0Q7QUFBa0I7RUFDakIsV0FBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0VBQTJCLDRCQUFBO0VBQThCLG9CQUFBOzs7O0FBRTFEO0VBQ0MsZUFBZSxhQUFmO0VBQThCLG1CQUFtQixhQUFuQjtFQUFrQyxXQUFXLGFBQVg7RUFDaEUsU0FBQTtFQUNBLFNBQUE7Ozs7QUFHRDtFQUNDLGVBQWUsY0FBZjtFQUErQixtQkFBbUIsY0FBbkI7RUFBbUMsV0FBVyxjQUFYO0VBQ2xFLFVBQUE7RUFDQSxTQUFBOzs7O0FBR0QsQ0FBQyxXQUFXLE1BQU87RUFDbEIsZUFBZSxjQUFmO0VBQStCLG1CQUFtQixjQUFuQjtFQUFtQyxXQUFXLGNBQVg7Ozs7QUFHbkUsQ0FBQyxXQUFXLE1BQU87RUFDbEIsZUFBZSxjQUFmO0VBQStCLG1CQUFtQixjQUFuQjtFQUFtQyxXQUFXLGNBQVg7Ozs7O0FBV3BFLHdCQUowQzs7O0VBQ3pDLGdDQUFpQztJQUF3QixxQkFBQTs7O0FBVTFELHdCQUoyQzs7O0VBQzFDLGdDQUFpQztJQUF3Qix5QkFBQTs7O0FBUTFELHdCQUwwQzs7O0VBQ3pDO0lBQWUsaUJBQUE7Ozs7RUFDZixlQUFnQjtJQUFLLDJCQUFBOzs7QUFPdEIsd0JBSjBDOzs7RUFDekMsZUFBZ0I7SUFBSywwQkFBQTs7O0FBWXRCLHdCQVR5Qzs7O0VBQ3hDLGNBQWU7SUFBSyxvQkFBQTtJQUFzQixlQUFBO0lBQWlCLGlCQUFBO0lBQW1CLG1CQUFBOzs7O0VBQzlFLGNBQWUsS0FBSTtJQUFVLGlCQUFBO0lBQW1CLGVBQUE7Ozs7RUFDaEQsY0FBZTtJQUFVLGdCQUFBOzs7O0VBQ3pCLGNBQWUsUUFBUTtJQUFRLGVBQUE7Ozs7RUFDL0IsQ0FBQztJQUFjLGdCQUFBOzs7O0VBQ2YsZ0NBQWlDO0lBQXdCLHFCQUFBOzs7QUFNekQsd0JBSHdDOzs7RUFDeEM7RUFBc0IsQ0FBQztJQUFxQix5QkFBQTs7OztFQUM1QyxnQ0FBaUM7SUFBd0Isc0JBQUEifQ== */
