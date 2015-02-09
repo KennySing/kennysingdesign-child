@@ -13,7 +13,8 @@ module.exports = function(grunt) {
           yuicompress: false,
           optimization: 2,
           sourceMap: true,
-          dumpLineNumbers: 'all',
+          dumpLineNumbers: false,
+
         },
         files: {
           "style.css": "styles/less/style.less"
