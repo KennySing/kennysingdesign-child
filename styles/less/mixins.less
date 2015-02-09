@@ -15,11 +15,11 @@
 }
 
 .translateX ( @x ) {
-	-webkit-transform: translateX( @x, );
-	-moz-transform: translateX( @x, );
-	-ms-transform: translateX( @x, );
-	-o-transform: translateX( @x, );
-	transform: translateX( @x, );
+	-webkit-transform: translateX( @x );
+	-moz-transform: translateX( @x );
+	-ms-transform: translateX( @x );
+	-o-transform: translateX( @x );
+	transform: translateX( @x );
 }
 
 .translateY ( @y ) {
@@ -62,4 +62,10 @@
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
 	border-radius: @radius;
+}
+
+.animation (@string: none; ) {
+	-webkit-animation: @string;
+	-moz-animation:    @string;
+	-ms-animation:     @string;
 }
