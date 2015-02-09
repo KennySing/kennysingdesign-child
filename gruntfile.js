@@ -12,7 +12,7 @@ module.exports = function(grunt) {
           compress: false,
           yuicompress: false,
           optimization: 2,
-          sourceMap: true,
+          sourceMap: false,
           dumpLineNumbers: false,
 
         },
