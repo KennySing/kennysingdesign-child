@@ -201,6 +201,90 @@ a.down-arrow:hover .down-arrow-right {
   -ms-transform: rotate(135deg);
   -o-transform: rotate(135deg);
 }
+#homepage-hero:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-animation: colorcycle 20s infinite;
+  -moz-animation: colorcycle 20s infinite;
+  -ms-animation: colorcycle 20s infinite;
+  animation: colorcycle 20s infinite;
+  filter: alpha(opacity=10);
+  -moz-opacity: 0.1;
+  -khtml-opacity: 0.1;
+  opacity: 0.1;
+}
+@-o-keyframes colorcycle {
+  0% {
+    background: #a24de3;
+  }
+  25% {
+    background: #00aeff;
+  }
+  50% {
+    background: #f45a4a;
+  }
+  75% {
+    background: #4fd1cd;
+  }
+  100% {
+    background: #a24de3;
+  }
+}
+@-moz-keyframes colorcycle {
+  0% {
+    background: #a24de3;
+  }
+  25% {
+    background: #00aeff;
+  }
+  50% {
+    background: #f45a4a;
+  }
+  75% {
+    background: #4fd1cd;
+  }
+  100% {
+    background: #a24de3;
+  }
+}
+@-webkit-keyframes colorcycle {
+  0% {
+    background: #a24de3;
+  }
+  25% {
+    background: #00aeff;
+  }
+  50% {
+    background: #f45a4a;
+  }
+  75% {
+    background: #4fd1cd;
+  }
+  100% {
+    background: #a24de3;
+  }
+}
+@keyframes colorcycle {
+  0% {
+    background: #a24de3;
+  }
+  25% {
+    background: #00aeff;
+  }
+  50% {
+    background: #f45a4a;
+  }
+  75% {
+    background: #4fd1cd;
+  }
+  100% {
+    background: #a24de3;
+  }
+}
 /*--------------------------------------*/
 /*----------FILTERED PORTFOLIO----------*/
 /*--------------------------------------*/
@@ -289,6 +373,7 @@ a.down-arrow:hover .down-arrow-right {
   -webkit-animation: none;
   -moz-animation: none;
   -ms-animation: none;
+  animation: none;
 }
 /*--------------------------------------*/
 /*---------------ShiftNav---------------*/

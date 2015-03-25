@@ -64,8 +64,27 @@
 	border-radius: @radius;
 }
 
-.animation (@string: none; ) {
+.animation (@string) {
 	-webkit-animation: @string;
-	-moz-animation:    @string;
-	-ms-animation:     @string;
+	-moz-animation: @string;
+	-ms-animation: @string;
+	animation: @string;
 }
+
+.opacity(@alpha1, @alpha2) {
+	filter: alpha(opacity=@alpha2);
+	-moz-opacity: @alpha1;
+	-khtml-opacity: @alpha1;
+	opacity: @alpha1;
+}
+
+.colorcycle ( @color1: #a24de3, @color2: #00aeff, @color3: #f45a4a, @color4: #4fd1cd ) {
+	@-o-keyframes colorcycle { 0% {background: @color1;} 25% {background: @color2;} 50% {background: @color3;} 75% {background: @color4;} 100% {background: @color1;} }
+	@-moz-keyframes colorcycle { 0% {background: @color1;} 25% {background: @color2;} 50% {background: @color3;} 75% {background: @color4;} 100% {background: @color1;} }
+	@-webkit-keyframes colorcycle { 0% {background: @color1;} 25% {background: @color2;} 50% {background: @color3;} 75% {background: @color4;} 100% {background: @color1;} }
+	@keyframes colorcycle { 0% {background: @color1;} 25% {background: @color2;} 50% {background: @color3;} 75% {background: @color4;} 100% {background: @color1;} }
+}
+
+
+
+

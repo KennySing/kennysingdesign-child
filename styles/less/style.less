@@ -80,6 +80,15 @@ a.down-arrow { margin: auto; width: 33px; height: 20px; text-align: center; marg
 	&:hover .down-arrow-right { .rotate (135deg); }
 }
 
+#homepage-hero:after{
+	content: "";
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	.animation (colorcycle 20s infinite);
+	.opacity (.1, 10);
+	.colorcycle;
+}
+
 
 
 /*--------------------------------------*/
@@ -110,7 +119,7 @@ a.down-arrow { margin: auto; width: 33px; height: 20px; text-align: center; marg
 
 	.et_pb_portfolio_items_wrapper { border-bottom: none; }
 	.et_pb_portfolio_item { width: 20% !important; margin: 0 !important; padding: 0 !important; position: relative !important; float: left; left: auto !important; top: auto !important;
-		&.active { .animation; }
+		&.active { .animation(none); }
 	}
 }
 
