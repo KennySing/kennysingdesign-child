@@ -81,6 +81,9 @@ h6 {
 /*--------------------------------------*/
 /*----------------HEADERS---------------*/
 /*--------------------------------------*/
+.full_screen {
+  min-height: 100vh;
+}
 #homepage-hero,
 .project-header {
   padding: 1px 0;
@@ -112,6 +115,9 @@ h6 {
   font-size: 28px;
   color: rgba(255, 255, 255, 0.07);
   margin: 7px;
+}
+.project-header {
+  background-color: #26262b !important;
 }
 .project-header .et_pb_row {
   width: 70%;
@@ -161,6 +167,7 @@ a.down-arrow {
   margin-top: 50px;
   position: relative;
   display: block;
+  z-index: 2;
 }
 a.down-arrow .down-arrow-left,
 a.down-arrow .down-arrow-right {
@@ -201,95 +208,15 @@ a.down-arrow:hover .down-arrow-right {
   -ms-transform: rotate(135deg);
   -o-transform: rotate(135deg);
 }
-#homepage-hero:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-animation: colorcycle 20s infinite;
-  -moz-animation: colorcycle 20s infinite;
-  -ms-animation: colorcycle 20s infinite;
-  animation: colorcycle 20s infinite;
-  filter: alpha(opacity=10);
-  -moz-opacity: 0.1;
-  -khtml-opacity: 0.1;
-  opacity: 0.1;
-}
-@-o-keyframes colorcycle {
-  0% {
-    background: #a24de3;
-  }
-  25% {
-    background: #00aeff;
-  }
-  50% {
-    background: #f45a4a;
-  }
-  75% {
-    background: #4fd1cd;
-  }
-  100% {
-    background: #a24de3;
-  }
-}
-@-moz-keyframes colorcycle {
-  0% {
-    background: #a24de3;
-  }
-  25% {
-    background: #00aeff;
-  }
-  50% {
-    background: #f45a4a;
-  }
-  75% {
-    background: #4fd1cd;
-  }
-  100% {
-    background: #a24de3;
-  }
-}
-@-webkit-keyframes colorcycle {
-  0% {
-    background: #a24de3;
-  }
-  25% {
-    background: #00aeff;
-  }
-  50% {
-    background: #f45a4a;
-  }
-  75% {
-    background: #4fd1cd;
-  }
-  100% {
-    background: #a24de3;
-  }
-}
-@keyframes colorcycle {
-  0% {
-    background: #a24de3;
-  }
-  25% {
-    background: #00aeff;
-  }
-  50% {
-    background: #f45a4a;
-  }
-  75% {
-    background: #4fd1cd;
-  }
-  100% {
-    background: #a24de3;
-  }
-}
 /*--------------------------------------*/
 /*----------FILTERED PORTFOLIO----------*/
 /*--------------------------------------*/
 .et_pb_filterable_portfolio {
   width: 100%;
+  margin-bottom: 0;
+}
+.et_pb_filterable_portfolio .et_pb_portfolio_items {
+  height: auto !important;
 }
 .et_pb_filterable_portfolio .et_pb_portfolio_filters {
   margin: 0 !important;
@@ -374,6 +301,62 @@ a.down-arrow:hover .down-arrow-right {
   -moz-animation: none;
   -ms-animation: none;
   animation: none;
+}
+/*--------------------------------------*/
+/*---------------Projects---------------*/
+/*--------------------------------------*/
+.nav-previous a,
+.nav-next a {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  margin-top: -25px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.nav-previous a:before,
+.nav-next a:before {
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  display: block;
+  line-height: 50px !important;
+  color: rgba(180, 165, 140, 0.6);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.nav-previous a:hover,
+.nav-next a:hover {
+  background: rgba(0, 0, 0, 0.1);
+  width: 60px;
+}
+.nav-previous a:hover:before,
+.nav-next a:hover:before {
+  color: #b4a58c;
+}
+.nav-next a {
+  left: 0;
+}
+.nav-next a:before {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.nav-previous a {
+  right: 0;
+}
+.nav-previous a:before {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
 }
 /*--------------------------------------*/
 /*---------------ShiftNav---------------*/
@@ -545,7 +528,9 @@ ul.et_social_icons_container {
 #shiftnav-toggle-main:before,
 .landing-slider .et_pb_slide_content:after,
 .project-header a:after,
-.et_pb_scroll_top {
+.et_pb_scroll_top,
+.nav-previous a:before,
+.nav-next a:before {
   font-family: 'ksd' !important;
   speak: none;
   font-style: normal;
@@ -581,7 +566,9 @@ ul.et_social_icons_container {
   content: "\e604" !important;
 }
 .icon-top:before,
-.et_pb_scroll_top:before {
+.et_pb_scroll_top:before,
+.nav-previous a:before,
+.nav-next a:before {
   content: "\e608";
 }
 /*--------------------------------------------------*/
