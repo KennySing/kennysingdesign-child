@@ -56,7 +56,12 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 	h1 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 13px; font-size: 74px; color: #d7d7d7; margin-left: 12px; }
 	#skills { letter-spacing: 1px; font-size: 16px; font-family: "Georgia", serif; font-weight: normal; color: #b5a78c; font-style: italic; }
 	#social { margin-top: 48px;
-		.icon { font-size: 28px; color: @white7; margin: 7px; }
+		.icon { font-size: 28px; color: @white7; margin: 10px; .transition;
+			&.icon-dribbble:hover { color: #ea4c89; }
+			&.icon-uniE600:hover { color: #fff; }
+			&.icon-linkedin:hover { color: #0077b5; }
+			&.icon-mail:hover { color: #444; }
+		}
 	}
 }
 
@@ -156,14 +161,14 @@ a {
 
 #shiftnav-toggle-main.shiftnav-toggle-position-absolute { position: absolute; }
 
-.shiftnav { width: 200px !important;
+.shiftnav { width: 100px !important;
 	&:after { .box-shadow ( 0 0 15px @black10; ) !important }
 }
 
 .shiftnav-inner { background-color: #212225 !important; }
 
 .shiftnav-open.shiftnav-open-right {
-	#shiftnav-toggle-main, .shiftnav-wrap { .translateX ( -200px) !important; }
+	#shiftnav-toggle-main, .shiftnav-wrap { .translateX ( -100px) !important; }
 }
 
 a.shiftnav-target {	color: @white40; padding: 30px 30px 0 !important; line-height: 1em !important;

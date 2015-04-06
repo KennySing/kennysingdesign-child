@@ -114,7 +114,23 @@ h6 {
 #homepage-hero #social .icon {
   font-size: 28px;
   color: rgba(255, 255, 255, 0.07);
-  margin: 7px;
+  margin: 10px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+#homepage-hero #social .icon.icon-dribbble:hover {
+  color: #ea4c89;
+}
+#homepage-hero #social .icon.icon-uniE600:hover {
+  color: #fff;
+}
+#homepage-hero #social .icon.icon-linkedin:hover {
+  color: #0077b5;
+}
+#homepage-hero #social .icon.icon-mail:hover {
+  color: #444;
 }
 .project-header {
   background-color: #26262b !important;
@@ -396,7 +412,7 @@ a.down-arrow:hover .down-arrow-right {
   position: absolute;
 }
 .shiftnav {
-  width: 200px !important;
+  width: 100px !important;
 }
 .shiftnav:after {
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
@@ -410,11 +426,11 @@ a.down-arrow:hover .down-arrow-right {
 }
 .shiftnav-open.shiftnav-open-right #shiftnav-toggle-main,
 .shiftnav-open.shiftnav-open-right .shiftnav-wrap {
-  -webkit-transform: translateX(-200px) !important;
-  -moz-transform: translateX(-200px) !important;
-  -ms-transform: translateX(-200px) !important;
-  -o-transform: translateX(-200px) !important;
-  transform: translateX(-200px) !important;
+  -webkit-transform: translateX(-100px) !important;
+  -moz-transform: translateX(-100px) !important;
+  -ms-transform: translateX(-100px) !important;
+  -o-transform: translateX(-100px) !important;
+  transform: translateX(-100px) !important;
 }
 a.shiftnav-target {
   color: rgba(255, 255, 255, 0.4);
