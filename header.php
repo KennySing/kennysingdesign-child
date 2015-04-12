@@ -182,7 +182,7 @@
 
 					<?php do_action( 'et_header_top' ); ?>
 				</div> <!-- #et-top-navigation -->
-				<a href="/kennysing/#portfolio"><div id="portfolio-icon"></div></a>
+				<a href="/kennysing/#fw-portfolio"><div id="portfolio-icon"></div></a>
 			</div> <!-- .container -->
 		</header> <!-- #main-header -->
 

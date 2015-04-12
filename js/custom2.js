@@ -8,7 +8,7 @@ $(window).resize(function() {
 	$(".full_screen").each(center_row);
 });
 
-$(window).on('orientationchange', function() { 
+$(window).on('orientationchange', function() {
 	$(".full_screen").each(center_row);
 });
 

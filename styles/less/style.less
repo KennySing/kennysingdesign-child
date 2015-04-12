@@ -40,9 +40,13 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 	h1, h2, h3, h4, h5, h6 { color: #d7d7d7 !important; }
 }
 
+.project .et_section_regular .et_pb_row { width: 85%; max-width: 1080px; }
 .fw-section, .fw-section .et_pb_row { width: 100%; padding: 0; margin: 0; }
 
-
+.et_pb_promo_button, .et_pb_more_button { font-size: 14px; font-weight: 700; padding: 8px 15px !important; text-transform: uppercase; letter-spacing: 1px; border: none;
+	&:after { font-size: 25px; }
+	&:hover { padding: 8px 30px 8px 15px !important; border: none; }
+}
 
 /*--------------------------------------*/
 /*----------------HEADERS---------------*/
@@ -67,7 +71,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 
 .project-header {
 	background-color: #26262b !important;
-	.et_pb_row { width: 70%; max-width: 600px; margin: auto; .box-sizing-border-box; }
+	.et_pb_row { width: 70%; max-width: 600px !important; margin: auto; .box-sizing-border-box; }
 	h2 { font-weight: 300; font-size: 46px; padding-bottom: 4px; }
 	h2, span.cats { text-transform: uppercase; letter-spacing: 4px; }
 	.et_pb_slide_content { font-size: 14px; display: inline-block; padding: 0; }
@@ -125,7 +129,7 @@ a.down-arrow { margin: auto; width: 33px; height: 20px; text-align: center; marg
 	}
 
 	.et_pb_portfolio_items_wrapper { border-bottom: none; }
-	.et_pb_portfolio_item { width: 20% !important; margin: 0 !important; padding: 0 !important; position: relative !important; float: left; left: auto !important; top: auto !important;
+	.et_pb_portfolio_item { width: 25% !important; margin: 0 !important; padding: 0 !important; position: relative !important; float: left; left: auto !important; top: auto !important;
 		&.active { .animation(none); }
 	}
 }
@@ -135,16 +139,31 @@ a.down-arrow { margin: auto; width: 33px; height: 20px; text-align: center; marg
 /*--------------------------------------*/
 /*---------------Projects---------------*/
 /*--------------------------------------*/
-a {
-	.nav-previous &, .nav-next & { width: 50px; height: 50px; background: @black10; position: fixed; top: 50%; margin-top: -25px; .transition();
-		&:before { font-size: 20px; position: relative; text-align: center; display: block; line-height: 50px !important; color: @tan60; .transition(); }
-		&:hover { background: @black10; width: 60px;
+.nav-previous { float: right; a:before { .rotate (90deg); } }
+.nav-next { float: left; a:before { .rotate (-90deg); } }
+
+.nav-previous, .nav-next {
+	margin-top: -125px;
+	a { display: block; width: 40px; height: 40px; .transition();
+		&:before { font-size: 20px; position: relative; text-align: center; display: block; line-height: 40px !important; background: @black20;  color: @white90; .transition(); }
+		&:hover { background: @black10;
 			&:before { color: @tan; }
 		}
-
 	}
-	.nav-next & { left: 0; &:before { .rotate (-90deg); } }
-	.nav-previous & { right: 0; &:before { .rotate (90deg); } }
+}
+
+.gutterless-images .et_pb_column { line-height: 0;
+	.et_pb_image { margin-bottom: 0; }
+}
+.centered-image { margin-left: auto; margin-right: auto; display: block; }
+
+.project .et_section_regular.fullwidth-image { margin: 0; padding: 0; line-height: 0;
+	.et_pb_row, img {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		max-width: none;
+	}
 }
 
 /*--------------------------------------*/
@@ -191,6 +210,13 @@ a.shiftnav-target {	color: @white40; padding: 30px 30px 0 !important; line-heigh
 }
 
 
+/*--------------------------------------*/
+/*-------------BUTTON COLORS------------*/
+/*--------------------------------------*/
+.et_pb_promo_button {
+	#divi-theme-demo-btn & { background: rgba( 206, 68, 65, 1 ); &:hover { background: rgba( 206, 68, 65, .6 ); } }
+	// .buttonclass & { background: rgb( 206, 68, 65 ); }
+}
 
 /*--------------------------------------*/
 /*--------------BACK TO TOP-------------*/
@@ -246,15 +272,13 @@ ul.et_social_icons_container { width: auto !important; }
 .icon-top:before, .et_pb_scroll_top:before, .nav-previous a:before, .nav-next a:before { content: "\e608"; }
 
 
-
+#main-footer { display: none; }
 /*--------------------------------------------------*/
 /*-----------------[RESPONSIVE]---------------------*/
 /*--------------------------------------------------*/
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (max-width: 2000px){
-
-	.et_pb_filterable_portfolio .et_pb_portfolio_item { width: 25% !important; }
 
 }
 
