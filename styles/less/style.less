@@ -20,7 +20,7 @@ Version:        1.0
 /*----------------GENERAL---------------*/
 /*--------------------------------------*/
 
-body { background-color: #222; .image-rendering-crisp; }
+body { background-color: #222; .image-rendering-crisp; font-size: 16px; }
 
 h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 
@@ -37,15 +37,25 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 #logo { height: 45px !important; max-height: 45px !important; margin-bottom: 0; }
 
 .et_pb_bg_layout_dark {
-	h1, h2, h3, h4, h5, h6 { color: #d7d7d7 !important; }
+	p { color: #e8e8e8 !important; }
 }
 
-.project .et_section_regular .et_pb_row { width: 85%; max-width: 1080px; }
+
 .fw-section, .fw-section .et_pb_row { width: 100%; padding: 0; margin: 0; }
 
 .et_pb_promo_button, .et_pb_more_button { font-size: 14px; font-weight: 700; padding: 8px 15px !important; text-transform: uppercase; letter-spacing: 1px; border: none;
 	&:after { font-size: 25px; }
 	&:hover { padding: 8px 30px 8px 15px !important; border: none; }
+}
+
+.et_pb_text { max-width: 850px; margin-right: auto; margin-left: auto;
+	&.et_pb_code { max-width: none; }
+}
+
+
+.et_pb_row {
+	.row_80percent & { width: 80%; }
+	.row_90percent & { width: 90%; }
 }
 
 /*--------------------------------------*/
@@ -158,13 +168,52 @@ a.down-arrow { margin: auto; width: 33px; height: 20px; text-align: center; marg
 .centered-image { margin-left: auto; margin-right: auto; display: block; }
 
 .project .et_section_regular.fullwidth-image { margin: 0; padding: 0; line-height: 0;
-	.et_pb_row, img {
+	.et_pb_row, .et_pb_column_4_4, img {
 		margin: 0;
 		padding: 0;
 		width: 100%;
 		max-width: none;
 	}
 }
+
+
+/*--------------------------------------*/
+/*-----------------DIVI-----------------*/
+/*--------------------------------------*/
+#divi-theme-examples img { .transition(); &:hover { opacity: .7;  } }
+
+
+/*--------------------------------------*/
+/*----------------RESULTS---------------*/
+/*--------------------------------------*/
+
+#results-logo-r1 .et_pb_blurb { width: 20%; margin-right: 0; float: left; }
+#results-moods {
+	.et_pb_image { .box-shadow ( 0px 8px 20px 0px rgba(0,0,0,0.15)); }
+	.et_pb_row { width: 80%;
+		.et_pb_column_1_3 { width: 30%; margin-right: 5%;
+			&:last-child { margin-right: 0; }
+		}
+	}
+}
+
+
+/*--------------------------------------*/
+/*----------------MONARCH---------------*/
+/*--------------------------------------*/
+#monarch-demo-cta { position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; margin-bottom: 7%; }
+@import "monarch";
+
+
+
+
+
+
+/*--------------------------------------*/
+/*---------------CodePen---------------*/
+/*--------------------------------------*/
+
+.codepen {}
 
 /*--------------------------------------*/
 /*---------------ShiftNav---------------*/
@@ -215,7 +264,8 @@ a.shiftnav-target {	color: @white40; padding: 30px 30px 0 !important; line-heigh
 /*--------------------------------------*/
 .et_pb_promo_button {
 	#divi-theme-demo-btn & { background: rgba( 206, 68, 65, 1 ); &:hover { background: rgba( 206, 68, 65, .6 ); } }
-	// .buttonclass & { background: rgb( 206, 68, 65 ); }
+	#results-website-btn & { background: rgba(255, 122, 69, 1); &:hover { background: rgba(255, 122, 69, .6) } }
+	.monarch-button & { background: rgba(0, 140, 225, 1); &:hover { background: rgba(0, 140, 225, .6) } }
 }
 
 /*--------------------------------------*/
@@ -303,6 +353,7 @@ ul.et_social_icons_container { width: auto !important; }
 	#main-header { padding-bottom: 0; }
 
 	.project-header h2 { font-weight: 300 !important; }
+	.project .et_section_regular .et_pb_row { width: 85%; }
 
 }
 
@@ -312,6 +363,8 @@ ul.et_social_icons_container { width: auto !important; }
 
 	.project-header h2 { font-size: 36px !important; }
 
+	#results-logo-r1 .et_pb_blurb { width: 20%; margin-right: 0; float: left; }
+	#results-moods .et_pb_row .et_pb_column_1_3 { width: 100%%; margin-right: 0; }
 }
 
 
