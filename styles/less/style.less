@@ -62,11 +62,11 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 /*----------------HEADERS---------------*/
 /*--------------------------------------*/
 
-.full_screen { min-height: 100vh; }
+.full_screen { min-height: 100vh; height: 100vh; }
 #homepage-hero, .project-header { padding: 1px 0;}
 
 #homepage-hero {
-	.et_pb_row { width: 85%; }
+	.et_pb_row { width: 85%; top: 50%; transform: translateY(-50%); }
 	h1 { font-family: 'Open Sans Condensed', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 13px; font-size: 74px; color: #d7d7d7; margin-left: 12px; }
 	#skills { letter-spacing: 1px; font-size: 16px; font-family: "Georgia", serif; font-weight: normal; color: #b5a78c; font-style: italic; }
 	#social { margin-top: 48px;
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
 
 .project-header {
 	background-color: #26262b !important;
-	.et_pb_row { width: 70%; max-width: 600px !important; margin: auto; .box-sizing-border-box; }
+	.et_pb_row { width: 70%; max-width: 600px !important; margin: auto; .box-sizing-border-box; top: 50%; transform: translateY(-50%); }
 	h2 { font-weight: 300; font-size: 46px; padding-bottom: 4px; }
 	h2, span.cats { text-transform: uppercase; letter-spacing: 4px; }
 	.et_pb_slide_content { font-size: 14px; display: inline-block; padding: 0; }
@@ -204,7 +204,7 @@ a.down-arrow { margin: auto; width: 33px; height: 20px; text-align: center; marg
 #monarch-demo-cta { position: absolute; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0; margin-bottom: 7%; }
 @import "monarch";
 
-
+#monarch-prototype-cta h4 { color: #81d742 !important; }
 
 
 

@@ -111,6 +111,7 @@ h6 {
 /*--------------------------------------*/
 .full_screen {
   min-height: 100vh;
+  height: 100vh;
 }
 #homepage-hero,
 .project-header {
@@ -118,6 +119,8 @@ h6 {
 }
 #homepage-hero .et_pb_row {
   width: 85%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #homepage-hero h1 {
   font-family: 'Open Sans Condensed', sans-serif;
@@ -170,6 +173,8 @@ h6 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .project-header h2 {
   font-weight: 300;
@@ -690,6 +695,9 @@ ul.rounded.spaced li {
   transition: all 0.3s;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
+}
+#monarch-prototype-cta h4 {
+  color: #81d742 !important;
 }
 /*--------------------------------------*/
 /*---------------CodePen---------------*/

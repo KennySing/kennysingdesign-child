@@ -20,7 +20,7 @@ function center_row() {
 	var difference = (section_height - row_height) / 2;
 	$(this).css("height", height);
 	$(this).css("min-height", row_height);
-	row.css("margin-top", difference);
+	// row.css("margin-top", difference);
 }
 
 function center_row_load() {
@@ -30,7 +30,7 @@ function center_row_load() {
 	var difference = (height - row_height) / 2;
 	$(this).css("height", height);
 	$(this).css("min-height", row_height);
-	row.css("margin-top", ($(this).height() - row_height) / 2);
+	// row.css("margin-top", ($(this).height() - row_height) / 2);
 }
 
 })(jQuery)
