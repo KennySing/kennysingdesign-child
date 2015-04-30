@@ -106,6 +106,57 @@ h6 {
 .row_90percent .et_pb_row {
   width: 90%;
 }
+.et_pb_gutters_0percent .et_pb_column,
+.et_pb_gutters_0percent .et_pb_column .et_pb_row_inner .et_pb_column,
+.et_pb_gutters_0percent .et_pb_column .et_pb_module,
+.et_pb_gutters_0percent .et_section_specialty .et_pb_column .et_pb_module,
+.et_pb_gutters_0percent .et_pb_column .et_pb_widget,
+.et_pb_gutters_0percent .et_pb_column .et_pb_gallery_grid .et_pb_gallery_item,
+.et_pb_gutters_0percent .et_pb_column .et_pb_blog_grid .column,
+.et_pb_gutters_0percent .et_pb_column .et_pb_blog_grid .column .et_pb_post,
+.et_pb_gutters_0percent .footer-widget,
+.et_pb_gutters_0percent .footer-widget .fwidget {
+  margin: 0;
+}
+.et_pb_gutters_0percent .et_pb_column .et_pb_row_inner {
+  padding: 0;
+}
+.et_pb_gutters_0percent .et_pb_column_4_4 {
+  width: 100%;
+}
+.et_pb_gutters_0percent .et_pb_column_3_4 {
+  width: 75%;
+}
+.et_pb_gutters_0percent .et_pb_column_2_3 {
+  width: 66.667%;
+}
+.et_pb_gutters_0percent .et_pb_column_1_2,
+.et_pb_gutters_0percent .et_pb_column_3_8,
+.et_pb_gutters_0percent .et_pb_column_1_2 .et_pb_row_inner .et_pb_column_1_4,
+.et_pb_gutters_0percent .et_pb_column_2_3 .et_pb_row_inner .et_pb_column_1_3,
+.et_pb_gutters_0percent .et_pb_column_2_3 .et_pb_gallery_grid .et_pb_gallery_item,
+.et_pb_gutters_0percent .et_pb_column_1_2 .et_pb_gallery_grid .et_pb_gallery_item,
+.et_pb_gutters_0percent .et_pb_column_3_4 .et_pb_blog_grid .column.size-1of2,
+.et_pb_gutters_0percent .et_pb_column_2_3 .et_pb_blog_grid .column.size-1of2,
+.et_pb_gutters_0percent .et_pb_column .et_pb_blog_grid .column,
+.et_pb_gutters_0percent .et_pb_column .et_pb_blog_grid .column .et_pb_post,
+.et_pb_gutters_0percent .et_pb_column_2_3 .et_pb_widget,
+.et_pb_gutters_0percent .et_pb_column_1_2 .et_pb_widget {
+  width: 50%;
+}
+.et_pb_gutters_0percent .et_pb_column_1_3,
+.et_pb_gutters_0percent .et_pb_column_3_4 .et_pb_row_inner .et_pb_column_1_4,
+.et_pb_gutters_0percent .et_pb_column_3_4 .et_pb_gallery_grid .et_pb_gallery_item,
+.et_pb_gutters_0percent .et_pb_column_4_4 .et_pb_blog_grid .column.size-1of3,
+.et_pb_gutters_0percent .et_pb_column_3_4 .et_pb_widget {
+  width: 33.333%;
+}
+.et_pb_gutters_0percent .et_pb_column_1_4,
+.et_pb_gutters_0percent .et_pb_column_4_4 .et_pb_gallery_grid .et_pb_gallery_item,
+.et_pb_gutters_0percent .et_pb_column_4_4 .et_pb_widget,
+.et_pb_gutters_0percent .footer-widget {
+  width: 25%;
+}
 /*--------------------------------------*/
 /*----------------HEADERS---------------*/
 /*--------------------------------------*/
